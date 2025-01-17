@@ -7,8 +7,7 @@
 @import url(./reset.css);
 
 body {
-    font-family: 'Pretendard-Regular';
-}
+    font-family: 'GowunDodum-Regular';}
 
 /* header */
 #header { 
@@ -17,13 +16,15 @@ body {
     z-index: 100;
 }
 #header h1 { 
+    position: absolute;
+    z-index: 100;
     width: 149px;
     height: 35px;
     position: absolute;
     top: 40px;
     left: 100px;
 }
-#header h1 a { 
+#header h1 a {
     display: block;
     text-indent: 100%;
     width: 149px;
@@ -39,7 +40,9 @@ body {
     position: absolute; 
     width: 100%;
     top: 0;
+    left: 50%;
     transition: 0.5s right;
+    transform: translateX(-50%);
 }
 #gnbList{ 
     margin: 20px 0 0 100px;
@@ -60,7 +63,6 @@ body {
 /* snb */
 .snb { padding: 20px 0;}
 .snb li { line-height: 40px ;} 
-/* .snb li a { color: #000 ;}
 
 /* 검색 */
 #rightWrap {
@@ -121,4 +123,62 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+}
+
+/* 슬로건 */
+#slogan {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+}
+#slogan h2 {
+    font-family: 'HancomMalangMalang-Regular';
+    font-size: 5em;
+    letter-spacing: -4px;
+}
+#slogan p {
+    font-family: 'GowunDodum-Regular';
+    margin-top: 30px;
+    letter-spacing: 2px;
+}
+
+/* main */
+#aboutUs { }
+#aboutUs { }
+#aboutUs { }
+#aboutUs { }
+#aboutUs { }
+#aboutUs { }
+#aboutUs { }
+
+/* contectUs */
+#contectUs {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    background: url(../image_source/pen.png) no-repeat center bottom -100px/ 50px ,url(../image_source/blackBg.png) no-repeat center /cover;
+    justify-content: center;
+    align-items: center;
+}
+#contectUs h2{ 
+    font-family: 'Pretendard';
+    color: white;
+    font-size: 3em;
+    margin-bottom: 70px;
+    font-weight: 100;
+}
+#contectUs a {
+    font-family: 'Pretendard-Regular';
+    color: white;
+    font-size: 1em;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 0 0 10px 0;
+    border-bottom: 2px solid #c2c2c2;
+    margin-bottom: 70px;
 }
