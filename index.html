@@ -11,7 +11,7 @@
 <body>
     <!-- 로고 -->
     <header id="header">
-        <h1 class="logo"><a href="#">모닝글로리 로고</a></h1>
+        <h1 class="logo"><a href="#">모닝글로리</a></h1>
 
         <!-- 네비게이션 -->
         <nav id="gnb">
@@ -48,16 +48,19 @@
             </ul>
         </nav>
 
-        <!-- 검색 -->
-        <div id="searchBar">
-            <a href="#" class="search">검색</a>
-            <a href="#" class="menuBar">햄버거 바</a>
+        <!-- 메뉴, 검색 -->
+        <div id="rightWrap">
+            <form class="search">
+                <input type="search" placeholder="검색어를 입력하세요.">
+            </form>
+            <a href="#" class="searchIcon">검색</a>
+            <a href="#" class="siteMapView">사이트맵</a>
         </div>
     </header>
 
     <!-- 비디오 -->
     <div id="videoWrap">
-        <video src="./동영상/monami.mp4" autoplay muted loop playsinline></video>
+        <video src="./video/monami.mp4" autoplay muted loop playsinline></video>
     </div>
 
     <!-- 슬로건 -->
@@ -71,27 +74,45 @@
             <h2>앞으로의 40년을 위해</h2>
             <p>오직 세계적인 상표가 되기 위해 한 곳만 바라보며 달려왔습니다.<br>
                 고객 여러분의 관심과 성원에 힘입어 비약적으로 성장한 모닝글로리의 발자취를 소개합니다.</p>
-            <p>since</p>
-            <div class="count">
-                <span class="num">1981</span>
-            </div>
-            <div class="count">
-                <span class="num">2025</span>
-            </div>
+                <dl id="count">
+                    <dt>since</dt>
+                    <dd class="num">1981</dd>
+                    <dd class="num">2025</dd>
+                </dl>
             <a href="#">회사소개 더보기</a>
         </section>
         <section id="introduction">
-            <h2 class="hidden">사업소개</h2>
-
-            <p class="subTitle">introduction</p>
+            <h2 class="hidden">사업소개<br>
+                <span class="subTitle">introduction</span>
+            </h2>
             <article>
-                <h3><a href="#">Online</a></h3>
+                <h3>Online</h3>
+                <div class="Business_content1">
+                    <p>온라인 사업</p>
+                    <p>모닝글로리에서는 미래 성장동력으로 주목하고 있는 인터넷 쇼핑 관련 업무 및 온라인 비즈니스를 수행하고 있습니다.<br>
+                        이와 관련하여 시장을 선도해 나갈 수 있는 아이디어와 상품을 내놓기 위해 끊임없이 노력하고 있습니다.<br>
+                        모닝글로리는 제품과 돈이 오가는 쇼핑몰이 아닌 고객과 회사가 함께 행복한 새로운 온라인 쇼핑의 유형을 끊임없이 제시하겠습니다.</p>
+                    <a href="#">자세히 보기</a>
+                </div>
             </article>
             <article>
-                <h3><a href="#">Overseas Business</a></h3>
+                <h3>Overseas Business</h3>
+                <div class="Business_content2">
+                    <p>해외 사업</p>
+                    <p>해외사업팀은 크게 해외영업 파트와 해외생산 파트로 나눌 수 있습니다.<br>
+                        해외영업 파트는 ‘정직한 이름 - 모닝글로리’의 제품을 세계에 알리고 많은 해외 소비자들이 한국의 문구 제품을 쓸 수 있도록 노력하고 있으며,<br>
+                        수출 영업뿐만 아니라 해외 가맹점 모집, 직영 매장 개설, 라이선스, 해외 마케팅, 전시회 참가 등 다각도의 해외 업무를 하고 있습니다.</p>
+                    <a href="#">자세히 보기</a>
+                </div>
             </article>
             <article>
-                <h3><a href="#">Special Sales</a></h3>
+                <h3>Special Sales</h3>
+                <div class="Business_content3">
+                    <p class="Business_Title">특판 사업</p>
+                    <p>모닝글로리 특판팀은 교원,구몬,삼성전자등 국내 우수 기업체의 홍보관련<br>
+                        프로모션 제품을 저비용ㆍ고품질로 맞춤형으로 제작하여 납품하고 있습니다.</p>
+                    <a href="#">자세히 보기</a>
+                </div>
             </article>
         </section>
         <section id="newsNotice">
@@ -99,9 +120,9 @@
             <article>
                 <h3>Notice</h3>
                 <ul>
-                    <li><a href="#">모닝글로리 모꿈이 서포터즈 26기 모집...</a></li>
-                    <li><a href="#">모닝글로리 모꿈이 서포터즈 25기 모집...</a></li>
-                    <li><a href="#">모닝글로리 모꿈이 서포터즈 24기 모집...</a></li>
+                    <li><a href="#">모닝글로리 모꿈이 서포터즈 26기 모집 중! 어서 빨리 신청하세요!</a></li>
+                    <li><a href="#">모닝글로리 모꿈이 서포터즈 25기 모집 중! 어서 빨리 신청하세요!</a></li>
+                    <li><a href="#">모닝글로리 모꿈이 서포터즈 24기 모집 중! 어서 빨리 신청하세요!</a></li>
                 </ul>
                 <a href="#" class="more">공지사항 더보기</a>
             </article>

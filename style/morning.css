@@ -8,22 +8,32 @@
 
 body {
     font-family: 'Pretendard-Regular';
-    height: 100vh;
 }
 
 /* header */
 #header { 
     width: 100%;
-    height: 75px;
     position: relative;
+    z-index: 100;
 }
 #header h1 { 
+    width: 149px;
+    height: 35px;
     position: absolute;
-    z-index: 99;
-    top: 15px;
-    left: 50px;
+    top: 40px;
+    left: 100px;
 }
-#header h1 a { color: #000;}
+#header h1 a { 
+    display: block;
+    text-indent: 100%;
+    width: 149px;
+    height: 35px;
+    white-space: nowrap;
+    overflow: hidden;
+    background: url(../image_source/icon/header_logo.png) no-repeat center / cover;
+}
+
+
 /* gnb */
     #gnb { 
     position: absolute; 
@@ -32,18 +42,83 @@ body {
     transition: 0.5s right;
 }
 #gnbList{ 
+    margin: 20px 0 0 100px;
     width: 100%;
     height: 75px;
     display: flex;
     justify-content: center;
     text-align: center;
-    column-gap: 30px;
-    /* overflow: hidden; */
+    column-gap: 40px;
+    overflow: hidden;
  }
 #gnbList .item{ }
-#gnbList .item > a { line-height: 75px; }
+#gnbList .item > a { 
+    line-height: 75px;
+    color: white;
+ }
+
 /* snb */
+.snb { padding: 20px 0;}
+.snb li { line-height: 40px ;} 
+/* .snb li a { color: #000 ;}
 
 /* 검색 */
+#rightWrap {
+    display: flex;
+    position: absolute;
+    top: 40px;
+    right: 100px;
+    z-index: 99;
+}
+#rightWrap .searchIcon { 
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: url(../image_source/icon/search.png) no-repeat center / cover ;
+    margin-right: 30px;
+    filter: invert(100%);
+ }
+#rightWrap .search {
+    display: none;
+}
+#rightWrap .siteMapView {
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: url(../image_source/icon/menu.png) no-repeat center / cover ;
+    margin-right: 30px;
+    filter: invert(100%);
+ }
 
 /* 동영상 */
+#videoWrap {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    object-fit: center;
+}
+#videoWrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5) ,rgba(0, 0, 0, 0.5));
+}
+#videoWrap video {
+    min-width: 1920px;
+    min-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
