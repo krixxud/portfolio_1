@@ -38,7 +38,7 @@ body {
     justify-content: center;
     text-align: center;
     column-gap: 30px;
-    overflow: hidden;
+    /* overflow: hidden; */
  }
 #gnbList .item{ }
 #gnbList .item > a { line-height: 75px; }
