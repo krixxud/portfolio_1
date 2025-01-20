@@ -72,22 +72,21 @@
     <main>
         <section id="aboutUs">
             <h2>앞으로의 40년을 위해</h2>
+            <dl id="count">
+                <dt>since</dt>
+                <dd class="num num1">1981</dd>
+                <dd class="num num2">2025</dd>
+            </dl>
             <p>오직 세계적인 상표가 되기 위해 한 곳만 바라보며 달려왔습니다.<br>
                 고객 여러분의 관심과 성원에 힘입어 비약적으로 성장한 모닝글로리의 발자취를 소개합니다.</p>
-                <dl id="count">
-                    <dt>since</dt>
-                    <dd class="num">1981</dd>
-                    <dd class="num">2025</dd>
-                </dl>
-            <a href="#">회사소개 더보기</a>
+            <a href="#">more</a>
         </section>
         <section id="introduction">
-            <h2 class="hidden">사업소개<br>
-                <span class="subTitle">introduction</span>
-            </h2>
+            <h2 class="introTitle"><span class="hidden">사업소개</span><br>
+               introduction</h2>
             <article>
                 <h3>Online</h3>
-                <div class="Business_content1">
+                <div class="business online">
                     <p class="Business_Title">온라인 사업</p>
                     <p>모닝글로리에서는 미래 성장동력으로 주목하고 있는 인터넷 쇼핑 관련 업무 및 온라인 비즈니스를 수행하고 있습니다.<br>
                         이와 관련하여 시장을 선도해 나갈 수 있는 아이디어와 상품을 내놓기 위해 끊임없이 노력하고 있습니다.<br>
@@ -97,7 +96,7 @@
             </article>
             <article>
                 <h3>Overseas Business</h3>
-                <div class="Business_content2">
+                <div class="business overseas">
                     <p class="Business_Title">해외 사업</p>
                     <p>해외사업팀은 크게 해외영업 파트와 해외생산 파트로 나눌 수 있습니다.<br>
                         해외영업 파트는 ‘정직한 이름 - 모닝글로리’의 제품을 세계에 알리고 많은 해외 소비자들이 한국의 문구 제품을 쓸 수 있도록 노력하고 있으며,<br>
@@ -107,7 +106,7 @@
             </article>
             <article>
                 <h3>Special Sales</h3>
-                <div class="Business_content3">
+                <div class="business special">
                     <p class="Business_Title">특판 사업</p>
                     <p>모닝글로리 특판팀은 교원,구몬,삼성전자등 국내 우수 기업체의 홍보관련<br>
                         프로모션 제품을 저비용ㆍ고품질로 맞춤형으로 제작하여 납품하고 있습니다.</p>
@@ -162,15 +161,22 @@
     </main>
     <footer id="footer">
         <div class="info">
-            <address>(주)모닝글로리의 콘텐츠를 사전 허가 없이 사용할 경우 저작권법 제25조에 의해 법적 처벌을 받을 수 있습니다.<br>
-                법인명:(주)모닝글로리 사업자등록번호안내:105-81-63968 대표자:한동인,송익현<br>
-                대표전화:02-719-0400 경기도 화성시 향남읍 장안로 781[18582] E-mail:shpark@morningglory.co.kr
-            </address>
-            <p><a href="#">home</a></p>
-            <p><a href="#">개인정보취급방침</a></p>
-            <p><a href="#">이용약관</a></p>
-            <p><a href="#">가맹점안내</a></p>
-            <small>Copyright &copy; 2013 morning.All Right Reserved.</small>
+            <div class="companyInfo">
+                <a href="#" class="footerLogo">모닝글로리 로고</a>
+                <address>(주)모닝글로리의 콘텐츠를 사전 허가 없이 사용할 경우 저작권법 제25조에 의해 법적 처벌을 받을 수 있습니다.<br>
+                    법인명:(주)모닝글로리 사업자등록번호안내:105-81-63968 대표자:한동인,송익현<br>
+                    대표전화:02-719-0400 경기도 화성시 향남읍 장안로 781[18582] E-mail:shpark@morningglory.co.kr
+                </address>
+            </div>
+            <div class="infoWrap">
+                <ul class="infoList">
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">가맹점안내</a></li>
+                </ul>
+                <small>Copyright &copy; 2013 morning.All Right Reserved.</small>
+            </div>
         </div>
     </footer>
 </body>

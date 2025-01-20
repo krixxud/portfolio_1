@@ -7,7 +7,10 @@
 @import url(./reset.css);
 
 body {
-    font-family: 'GowunDodum-Regular';}
+    font-family: 'GowunDodum-Regular';
+    overflow-x: hidden;
+}
+
 
 /* header */
 #header { 
@@ -16,7 +19,6 @@ body {
     z-index: 100;
 }
 #header h1 { 
-    position: absolute;
     z-index: 100;
     width: 149px;
     height: 35px;
@@ -137,7 +139,7 @@ body {
     text-align: center;
 }
 #slogan h2 {
-    font-family: 'HancomMalangMalang-Regular';
+    font-family: 'HancomMalangMalang-Bold';
     font-size: 5em;
     letter-spacing: -4px;
 }
@@ -148,13 +150,85 @@ body {
 }
 
 /* main */
-#aboutUs { }
-#aboutUs { }
-#aboutUs { }
-#aboutUs { }
-#aboutUs { }
-#aboutUs { }
-#aboutUs { }
+
+/* 회사소개 */
+#aboutUs {
+    margin: 0 auto;
+    width: 1200px;
+    height: 980px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#aboutUs h2 { 
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-size: 3em;
+    margin-bottom: 100px;
+}
+#aboutUs #count { 
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    position: relative;
+}
+#aboutUs #count dt {
+    font-size: 30px;
+ }
+#aboutUs #count .num { 
+    font-size: 8em;
+    font-family: 'Pretendard';
+	font-weight: 700;
+}
+#aboutUs #count .num1 {
+    position: relative;
+    letter-spacing: -10px;
+    padding-left: 20px
+}
+#aboutUs #count .num1::after {
+    content: "";
+    width: 300px;
+    height: 5px;
+    background: #000;
+    position: absolute;
+    border-radius: 20px;
+    top: 45px;
+    left: 260px;
+    display: none;
+}
+#aboutUs #count .num2 {
+    position: absolute;
+    top: 0px;
+    left: 65px;
+    letter-spacing: -10px;
+    display: none;
+ }
+#aboutUs p {
+    line-height: 40px;
+    margin-bottom: 100px;
+ }
+#aboutUs a {
+    margin-left: 1000px;
+    display: block; 
+    width: 130px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #000;
+    position: relative;
+    text-align: start;
+}
+#aboutUs a::after {
+    content:"";
+    height: 15px;
+    width: 1px;
+    background: #000;
+    position: absolute;
+    top: 7px;; right:6px;
+    transform: rotate(-45deg);
+}
+
+#introduction { }
 
 /* contectUs */
 #contectUs {
@@ -181,4 +255,62 @@ body {
     padding: 0 0 10px 0;
     border-bottom: 2px solid #c2c2c2;
     margin-bottom: 70px;
+}
+
+/* 푸터 */
+#footer { 
+    position: absolute;
+    width: 100%;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: no-repeat;
+    background-color: #000;
+}
+#footer .footerLogo { 
+    margin-right: 30px;
+    display: block;
+    width: 149px;
+    height: 35px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: url(../image_source/icon/header_logo.png) no-repeat;
+}
+#footer .info { 
+    color: white;
+}
+#footer .info .companyInfo { 
+    display: flex;
+}
+#footer .info address { 
+    line-height: 20px;
+    font-size: 12px;
+}
+#footer .infoWrap { 
+    display: flex;
+    margin-top: 40px;
+}
+#footer .infoList { 
+    display: flex;
+}
+#footer .info a {
+    text-transform: uppercase;
+    color: white;
+    margin-right: 30px;
+}
+#footer .infoList li {
+    position: relative;
+}
+#footer .infoList li:not(:last-child)::after { 
+    content: ""; 
+    position: absolute;
+    top: 0px; right: 13px; 
+    height: 15px;
+    border: 0.5px solid #fff;
+}
+#footer .info small { 
+    font-size: 12px;
+    margin: 2px 0 0 75px;
 }

@@ -72,9 +72,9 @@
 
 /* 한컴말랑말랑 */
 @font-face {
-    font-family: 'HancomMalangMalang-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2406-1@1.0/HancomMalangMalang-Regular.woff2') format('woff2');
-    font-weight: 400;
+    font-family: 'HancomMalangMalang-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2406-1@1.0/HancomMalangMalang-Bold.woff2') format('woff2');
+    font-weight: 900;
     font-style: normal;
 }
 
