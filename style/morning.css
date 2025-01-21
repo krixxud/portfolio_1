@@ -41,13 +41,13 @@ body {
     #gnb { 
     position: absolute; 
     width: 100%;
-    top: 0;
+    top: 0px;
     left: 50%;
     transition: 0.5s right;
     transform: translateX(-50%);
 }
 #gnbList{ 
-    margin: 20px 0 0 100px;
+    /* margin: 20px 0 0 100px; */
     width: 100%;
     height: 75px;
     display: flex;
@@ -55,7 +55,9 @@ body {
     text-align: center;
     column-gap: 40px;
     overflow: hidden;
- }
+    padding-top: 20px;
+    transition: 0.4s;
+}
 #gnbList .item{ }
 #gnbList .item > a { 
     line-height: 75px;
@@ -65,6 +67,9 @@ body {
 /* snb */
 .snb { padding: 20px 0;}
 .snb li { line-height: 40px ;} 
+.snb li a {
+    color: #000;
+}
 
 /* 검색 */
 #rightWrap {
@@ -241,7 +246,7 @@ body {
     height: 100%;
     z-index: 9;
     text-align: center;
-    line-height: 220px;
+    line-height: 230px;
     background: no-repeat center / cover;
     background-image: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)), url(../image_source/building.png);
     color: white;
@@ -249,7 +254,7 @@ body {
     text-transform: uppercase;
     letter-spacing: -1px;
     font-family: 'Pretendard';
-	font-weight: 500;
+	font-weight: 700;
 }
 #introduction article { 
     display: flex;
@@ -273,60 +278,185 @@ body {
     font-size: 25px;
     text-transform: uppercase;
     font-family: 'Pretendard';
-	font-weight: 400;
+	font-weight: 700;
 }
 .business { 
     font-family: 'Pretendard';
-	font-weight: 600;
+	font-weight: 400;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: #fff;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    flex-direction: column;
-    text-align: center;
     color: white;
+    display: flex;
 }
-.business:hover { 
-    display: block;
-}
+.business:hover {  }
+
 .business > div { 
-    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex: 0.333;
     height: 100%;
 }
-.business > .Title { 
+.business.overseas { 
+    justify-content: center;
+}
+.business.special { 
+    justify-content: end;
+}
+.business .Title { 
+    font-weight: 700;
     font-size: 3em;
     margin-bottom: 70px;
+    text-shadow: 0 0 3px #000c;
 }
-.business > .pTag { 
-    font-weight: 500;
-    margin-bottom: 30px;
+.business .pTag { 
+    font-weight: 400;
+    margin-bottom: 70px;
     line-height: 30px;
+    text-shadow: 0 0 3px #000c;
+    width: 70%;
 }
-.business > a { 
+.business a { 
     color: white;
     display: block;
-
+    margin-top: 50px;
+    width: 150px;
+    line-height: 40px;
+    background: #fff5;
+    border: 2px solid #fff;
+    border-radius: 30px;
 }
-
 .online {
     background: no-repeat center /cover; 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(../image_source/online.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../image_source/online.png);
 }
 .overseas {
     background: no-repeat center /cover; 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(../image_source/overseas.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../image_source/overseas.png);
 }
 .special {
     background: no-repeat center /cover; 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(../image_source/폼폼푸린.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../image_source/폼폼푸린.png);
 }
 #introduction article h3:hover + .business { 
     z-index: 10;
+}
+
+/* News&Notice */
+#newsNotice { 
+    width: 1200px;
+    margin: 0 auto;
+    height: 750px;
+    display: flex;
+}
+#newsNotice .leftWrap { 
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 750px;
+    justify-content: space-evenly;
+}
+#newsNotice h2 { 
+    line-height: 50px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-size: 2em;
+    position: relative;
+}
+#newsNotice h2::after {
+    content: "";
+    width: 3px;
+    height: 300px;
+    background: #000;
+    border-radius: 30px;
+    position: absolute;
+    top: 130px;
+    left: 0;
+}
+#newsNotice .sns{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+#newsNotice .sns p {
+    font-size: 20px;
+    margin-bottom: 30px;
+ }
+#newsNotice .sns ul { 
+    display: flex;
+    gap: 30px;
+}
+#newsNotice .sns ul li a {
+    display: block;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 42px;
+    height: 42px;
+}
+#newsNotice .sns ul li:nth-child(1) a { 
+    background: url(../image_source/icon/instagram.png) no-repeat center /cover ;
+}
+#newsNotice .sns ul li:nth-child(2) a { 
+    background: url(../image_source/icon/facebook.png) no-repeat center /cover ;
+}
+#newsNotice .sns ul li:nth-child(3) a { 
+    background: url(../image_source/icon/twitter.png) no-repeat center /cover ;
+}
+#newsNotice .sns ul li:nth-child(4) a { 
+    background: url(../image_source/icon/naverCafe.png) no-repeat center /cover ;
+}
+#newsNotice .rightWrap { 
+    width: 50%;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+}
+#newsNotice .rightWrap ul li {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 250px;
+    text-overflow: ellipsis;
+}
+#newsNotice .notice { 
+    /* background: #ff9292; */
+    height: 250px;
+    border-width: 2px 2px 1px 2px;
+    border-color: #e3e3e3;
+    border-style: solid;
+}
+#newsNotice .notice h3 { 
+    font-family: 'Pretendard';
+    font-weight: 500;
+}
+#newsNotice .pressRelease { 
+    /* background: #ff9292; */
+    height: 250px;
+    border-width: 1px 2px;
+    border-color: #e3e3e3;
+    border-style: solid;
+}
+#newsNotice .pressRelease h3 { 
+    font-family: 'Pretendard';
+    font-weight: 500;
+}
+#newsNotice .news { 
+    /* background: #ff9292; */
+    height: 250px;
+    border-width: 1px 2px;
+    border-color: #e3e3e3;
+    border-style: solid;
+}
+#newsNotice .news h3 { 
+    font-family: 'Pretendard';
+    font-weight: 500;
 }
 
 /* contectUs */
