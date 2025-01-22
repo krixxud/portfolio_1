@@ -222,6 +222,10 @@ body {
     font-family: 'HancomMalangMalang-Bold';
     font-weight: 900;
  }
+#aboutUs #count dd {
+    width: 280px;
+    text-align: left;
+}
 #aboutUs #count .num { 
     font-size: 8em;
     font-family: 'Pretendard';
@@ -241,19 +245,18 @@ body {
     position: absolute;
     border-radius: 20px;
     top: 60px;
-    left: 0%;
-    transition: width 0.5s ease-in-out;
+    left: 130%;
+    transition: width 2s ease-in-out;
 }
 #aboutUs #count .num1.active::after {
-    left: 135%;
     width: 100%;
 }
 #aboutUs #count .num2 {
     position: absolute;
     top: 0px;
-    left: 90px;
+    left: 790px;
     letter-spacing: -10px;
-    opacity: 0;
+    opacity: 1;
  }
 #aboutUs p {
     line-height: 20px;
@@ -298,14 +301,14 @@ body {
     font-size: 3em;
     text-transform: uppercase;
     letter-spacing: -1px;
-    font-family: 'HancomMalangMalang-Bold';
-    font-weight: 900;
+    font-family: 'Pretendard';
+	font-weight: 700;
 }
 #introduction article { 
     display: flex;
     flex: 1;
     align-items: end;
-
+    height: 100%;
 }
 #introduction article::after { 
     content: "";
@@ -313,23 +316,20 @@ body {
     border: 0.5px solid #ffffff66;
     z-index: 100;
 }
-#introduction article .btnLine { 
+/* #introduction article.on {
+    z-index: 10;
+} */
+#introduction article h3 { 
     position: relative;
     width: 100%;
-    height: 100%;
+    line-height: 150px;
+    z-index: 11;
     text-align: center;
+    color: white;
     font-size: 25px;
     text-transform: uppercase;
-    font-family: 'HancomMalangMalang-Bold';
-    font-weight: 900;
-    z-index: 11;
-}
-#introduction article .btnLine > h3 {
-    color: white;
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translateX(-50%);
+    font-family: 'Pretendard';
+	font-weight: 700;
 }
 .business { 
     font-family: 'Pretendard';
@@ -342,7 +342,6 @@ body {
     background: #fff;
     color: white;
     display: flex;
-    pointer-events: none;
 }
 .business > div { 
     display: flex;
@@ -375,11 +374,11 @@ body {
 .business a { 
     color: white;
     display: block;
+    margin-top: 50px;
     width: 150px;
     line-height: 40px;
     background: rgba(0, 0, 0, 0.7);
     border: 2px solid #fff9;
-    pointer-events: auto;
 }
 .online {
     background: no-repeat center /cover; 
@@ -393,11 +392,8 @@ body {
     background: no-repeat center /cover; 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../image_source/pompom.png);
 }
-#introduction article .btnLine:hover + .business { 
+#introduction article:hover + .business { 
     z-index: 10;
-}
-#introduction article .btnLine:hover + .business > a {
-    z-index: 11;
 }
 
 
@@ -413,19 +409,24 @@ body {
     flex-direction: column;
     width: 50%;
     height: 750px;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 70px;
 }
 #newsNotice h2 { 
     line-height: 50px;
-    font-family: 'HancomMalangMalang-Bold';
-    font-weight: 900;
+    font-family: 'Pretendard';
+    font-weight: 500;
     font-size: 2em;
     position: relative;
+}
+#newsNotice h2 span {
+    font-family: 'HancomMalangMalang-Bold';
+    font-weight: 900;
 }
 #newsNotice h2::after {
     content: "";
     width: 3px;
-    height: 300px;
+    height: 350px;
     background: #000;
     border-radius: 30px;
     position: absolute;
@@ -444,15 +445,15 @@ body {
  }
 #newsNotice .sns ul { 
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 #newsNotice .sns ul li a {
     display: block;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
-    width: 42px;
-    height: 42px;
+    width: 30px;
+    height: 30px;
 }
 #newsNotice .sns ul li:nth-child(1) a { 
     background: url(../image_source/icon/instagram.png) no-repeat center /cover ;
@@ -491,9 +492,7 @@ body {
     flex: 3;
 }
 #newsNotice .flexClass h3 { 
-    font-family: 'HancomMalangMalang-Bold';
-    font-weight: 900;
-    font-size: 2.5em;
+    font-size: 2em;
     line-height: 148.6px;
     flex: 1;
     /* background: #ff6868; */
@@ -507,10 +506,11 @@ body {
     margin: 40px 0 0 100px;
 }
 #newsNotice .flexClass .listWrap ul li { 
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 #newsNotice .flexClass .listWrap ul li a {
     color: #000;
+    font-family: 'Pretendard';
 }
 #newsNotice .flexClass .moreWrap {
     flex: 1;
@@ -522,7 +522,7 @@ body {
     padding-bottom: 4px;
     border-bottom: 1px solid #000;
     position: relative;
-    top: 50%;
+    top: 10%;
     right: 10%;
     transform: translateY(-40%);
     text-align: start;
