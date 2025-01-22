@@ -39,7 +39,6 @@ $(document).ready(function() {
         requestAnimationFrame(animateCounter);
     }
  
-    
     // 윈도우의 스크롤 이벤트를 모니터링합니다.
     $(window).on('scroll', function() {
         // 각 "counter" 요소에 대해 반복합니다.
@@ -53,14 +52,21 @@ $(document).ready(function() {
                 const contentHeight = rect.bottom - rect.top;
                 
                 // 요소가 화면에 특정 비율만큼 노출될 때 처리합니다.
-                if (rect.top <= winHeight - (contentHeight * exposurePercentage / 50) && rect.bottom >= (contentHeight * exposurePercentage / 50)) {
+                if (rect.top <= winHeight - (contentHeight * exposurePercentage / 400) && rect.bottom >= (contentHeight * exposurePercentage / 400)) {
                     const start = parseInt($el.data("start"));
                     const end = parseInt($el.data("end"));
                     // 숫자를 업데이트하고 애니메이션을 시작합니다.
                     updateCounter($el, start, end);
                     $el.data('scrolled', true);
+
+                    
+                    $("#aboutUs #count .num2").animate({ left: 790, opacity: 1 }, 1500, function() {
+                        $("#aboutUs #count .num1").addClass("active")
+                    })
+                    // $("#aboutUs #count .num1.active").animate({ left: `+=135%` })
                 }
             }
-        });
+        }); 
     }).scroll();
  });
+

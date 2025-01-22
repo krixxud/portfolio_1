@@ -205,8 +205,8 @@ body {
     flex-direction: column;
 }
 #aboutUs h2 { 
-    font-family: 'Pretendard';
-    font-weight: 700;
+    font-family: 'HancomMalangMalang-Bold';
+    font-weight: 900;
     font-size: 3em;
     margin-bottom: 150px;
 }
@@ -215,9 +215,12 @@ body {
     justify-content: center;
     margin-bottom: 150px;
     position: relative;
+    left: -400px;
 }
 #aboutUs #count dt {
     font-size: 30px;
+    font-family: 'HancomMalangMalang-Bold';
+    font-weight: 900;
  }
 #aboutUs #count .num { 
     font-size: 8em;
@@ -232,24 +235,28 @@ body {
 }
 #aboutUs #count .num1::after {
     content: "";
-    width: 300px;
+    width: 0px;
     height: 5px;
     background: #000;
     position: absolute;
     border-radius: 20px;
-    top: 45px;
-    left: 260px;
-    display: none;
+    top: 60px;
+    left: 0%;
+    transition: width 0.5s ease-in-out;
+}
+#aboutUs #count .num1.active::after {
+    left: 135%;
+    width: 100%;
 }
 #aboutUs #count .num2 {
     position: absolute;
     top: 0px;
-    left: 85px;
+    left: 90px;
     letter-spacing: -10px;
-    display: none;
+    opacity: 0;
  }
 #aboutUs p {
-    line-height: 40px;
+    line-height: 20px;
     margin-bottom: 100px;
  }
 #aboutUs a {
@@ -291,8 +298,8 @@ body {
     font-size: 3em;
     text-transform: uppercase;
     letter-spacing: -1px;
-    font-family: 'Pretendard';
-	font-weight: 700;
+    font-family: 'HancomMalangMalang-Bold';
+    font-weight: 900;
 }
 #introduction article { 
     display: flex;
@@ -306,17 +313,23 @@ body {
     border: 0.5px solid #ffffff66;
     z-index: 100;
 }
-#introduction article h3 { 
+#introduction article .btnLine { 
     position: relative;
     width: 100%;
-    line-height: 150px;
-    z-index: 11;
+    height: 100%;
     text-align: center;
-    color: white;
     font-size: 25px;
     text-transform: uppercase;
-    font-family: 'Pretendard';
-	font-weight: 700;
+    font-family: 'HancomMalangMalang-Bold';
+    font-weight: 900;
+    z-index: 11;
+}
+#introduction article .btnLine > h3 {
+    color: white;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .business { 
     font-family: 'Pretendard';
@@ -329,9 +342,8 @@ body {
     background: #fff;
     color: white;
     display: flex;
+    pointer-events: none;
 }
-.business:hover {  }
-
 .business > div { 
     display: flex;
     flex-direction: column;
@@ -363,12 +375,11 @@ body {
 .business a { 
     color: white;
     display: block;
-    margin-top: 50px;
     width: 150px;
     line-height: 40px;
-    background: #fff5;
-    border: 2px solid #fff;
-    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #fff9;
+    pointer-events: auto;
 }
 .online {
     background: no-repeat center /cover; 
@@ -382,9 +393,13 @@ body {
     background: no-repeat center /cover; 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../image_source/폼폼푸린.png);
 }
-#introduction article h3:hover + .business { 
+#introduction article .btnLine:hover + .business { 
     z-index: 10;
 }
+#introduction article .btnLine:hover + .business > a {
+    z-index: 11;
+}
+
 
 /* News&Notice */
 #newsNotice { 
@@ -402,8 +417,8 @@ body {
 }
 #newsNotice h2 { 
     line-height: 50px;
-    font-family: 'Pretendard';
-    font-weight: 500;
+    font-family: 'HancomMalangMalang-Bold';
+    font-weight: 900;
     font-size: 2em;
     position: relative;
 }
@@ -460,41 +475,77 @@ body {
 #newsNotice .rightWrap ul li {
     white-space: nowrap;
     overflow: hidden;
-    width: 250px;
+    width: 330px;
     text-overflow: ellipsis;
 }
+#newsNotice .flexClass {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+}
 #newsNotice .notice { 
-    /* background: #ff9292; */
-    height: 250px;
     border-width: 2px 2px 1px 2px;
     border-color: #e3e3e3;
     border-style: solid;
+    flex: 3;
 }
-#newsNotice .notice h3 { 
-    font-family: 'Pretendard';
-    font-weight: 500;
+#newsNotice .flexClass h3 { 
+    font-family: 'HancomMalangMalang-Bold';
+    font-weight: 900;
+    font-size: 2.5em;
+    line-height: 148.6px;
+    flex: 1;
+    /* background: #ff6868; */
+    padding-left: 50px;
+    border-bottom: 2px solid #e3e3e3;;
+}
+#newsNotice .flexClass .listWrap {
+    flex: 1;
+}
+#newsNotice .flexClass  .listWrap ul { 
+    margin: 40px 0 0 100px;
+}
+#newsNotice .flexClass .listWrap ul li { 
+    margin-bottom: 40px;
+}
+#newsNotice .flexClass .listWrap ul li a {
+    color: #000;
+}
+#newsNotice .flexClass .moreWrap {
+    flex: 1;
+}
+#newsNotice .flexClass .moreWrap a {
+    float: right;
+    display: block; 
+    width: 100px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #000;
+    position: relative;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-40%);
+    text-align: start;
+    color: #000;
+}
+#newsNotice .flexClass .moreWrap a::after {
+    content:"";
+    height: 15px;
+    width: 1px;
+    background: #000;
+    position: absolute;
+    top: 7px;; right:6px;
+    transform: rotate(-45deg);
 }
 #newsNotice .pressRelease { 
-    /* background: #ff9292; */
-    height: 250px;
     border-width: 1px 2px;
     border-color: #e3e3e3;
     border-style: solid;
-}
-#newsNotice .pressRelease h3 { 
-    font-family: 'Pretendard';
-    font-weight: 500;
 }
 #newsNotice .news { 
-    /* background: #ff9292; */
-    height: 250px;
     border-width: 1px 2px;
     border-color: #e3e3e3;
     border-style: solid;
-}
-#newsNotice .news h3 { 
-    font-family: 'Pretendard';
-    font-weight: 500;
 }
 
 /* contectUs */
@@ -514,7 +565,7 @@ body {
     font-weight: 100;
 }
 #contectUs a {
-    font-family: 'Pretendard-Regular';
+    font-family: 'Pretendard';
     color: white;
     font-size: 1em;
     font-weight: 900;
