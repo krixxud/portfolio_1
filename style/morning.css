@@ -391,7 +391,7 @@ body {
 }
 .special {
     background: no-repeat center /cover; 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../image_source/폼폼푸린.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../image_source/pompom.png);
 }
 #introduction article .btnLine:hover + .business { 
     z-index: 10;
