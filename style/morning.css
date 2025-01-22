@@ -308,7 +308,6 @@ body {
     display: flex;
     flex: 1;
     align-items: end;
-    height: 100%;
 }
 #introduction article::after { 
     content: "";
@@ -392,7 +391,7 @@ body {
     background: no-repeat center /cover; 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../image_source/pompom.png);
 }
-#introduction article:hover + .business { 
+#introduction article h3:hover + .business { 
     z-index: 10;
 }
 
