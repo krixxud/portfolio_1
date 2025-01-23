@@ -100,18 +100,8 @@ $(window).on('scroll', function () {
             }
         }
     });
-}).scroll();
 
-$('.searchIcon').on('click', function (e) {
-    e.preventDefault();
-    alert('검색 기능은 준비 중입니다.');
-});
-
-$(window).on('load', function () {
-    $('#header .logo, #slogan, #aboutUs').hide().fadeIn(2000);
-});
-
-// introduction 도달시
+    // introduction 도달시
 const $introduction = $("#introduction");
 
 // introduction 도달시
@@ -144,7 +134,19 @@ const $newsNotice = $("#newsNotice");
         $heading.removeClass('on')
 
     }
+})
 }).scroll();
+
+$('.searchIcon').on('click', function (e) {
+    e.preventDefault();
+    alert('검색 기능은 준비 중입니다.');
+});
+
+$(window).on('load', function () {
+    $('#header .logo, #slogan, #aboutUs').hide().fadeIn(2000);
+});
+
+
 
 
 $("#introduction article h3 span").on('mouseenter', function() {

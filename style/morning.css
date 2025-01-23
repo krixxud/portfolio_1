@@ -334,6 +334,9 @@ body {
 #introduction article h3.on {
     background: linear-gradient( 0deg, rgba(255, 255, 255, 0.3), transparent );
 }
+#introduction article h3 > span {
+    width: 100%;
+}
 .business { 
     font-family: 'Pretendard';
 	font-weight: 400;
@@ -345,6 +348,9 @@ body {
     background: #fff;
     color: white;
     display: flex;
+    transition: opacity 0.8s ease-in-out; /* 부드러운 전환 */
+    opacity: 0;
+    z-index: 1;
 }
 .business > div { 
     display: flex;
@@ -401,6 +407,7 @@ body {
 }
 #introduction article:hover > .business { 
     z-index: 10;
+    opacity: 1;
 }
 
 
