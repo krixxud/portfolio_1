@@ -142,9 +142,10 @@ $('.searchIcon').on('click', function (e) {
     alert('검색 기능은 준비 중입니다.');
 });
 
-$(window).on('load', function () {
-    $('#header .logo, #slogan, #aboutUs').hide().fadeIn(2000);
-});
+// $(window).on('load', function () {
+//     $('#slogan h2').css({ opacity: 1 });
+//     $('#slogan p').css({ opacity: 1 });
+// });
 
 
 

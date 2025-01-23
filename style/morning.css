@@ -183,11 +183,18 @@ body {
     font-family: 'HancomMalangMalang-Bold';
     font-size: 5em;
     letter-spacing: -4px;
+    opacity: 0;
+    animation: sloganAni 1s 1s forwards;
 }
 #slogan p {
     font-family: 'GowunDodum-Regular';
     margin-top: 40px;
     letter-spacing: 2px;
+    opacity: 0;
+    animation: sloganAni 2s 2s forwards;
+}
+@keyframes sloganAni {
+    to { opacity: 1 };
 }
 
 /* main */
