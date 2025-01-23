@@ -10,7 +10,6 @@ body {
     font-family: 'GowunDodum-Regular';
 }
 
-
 /* header */
 #header { 
     overflow: hidden;
@@ -287,6 +286,9 @@ body {
     width: 100%; 
     height: 100vh;
     display: flex;
+    scale: 0.7;
+    transition: 1s ease-out scale;
+    overflow: hidden; /* 스크롤 방지 */
 }
 #introduction .introTitle {
     position: absolute;
@@ -315,9 +317,6 @@ body {
     border: 0.5px solid #ffffff66;
     z-index: 100;
 }
-/* #introduction article.on {
-    z-index: 10;
-} */
 #introduction article h3 { 
     position: relative;
     width: 100%;
@@ -329,6 +328,11 @@ body {
     text-transform: uppercase;
     font-family: 'Pretendard';
 	font-weight: 700;
+    transition: 0.4s;
+    display: block;
+}
+#introduction article h3.on {
+    background: linear-gradient( 0deg, rgba(255, 255, 255, 0.3), transparent );
 }
 .business { 
     font-family: 'Pretendard';
@@ -378,6 +382,10 @@ body {
     line-height: 40px;
     background: rgba(0, 0, 0, 0.7);
     border: 2px solid #fff9;
+    transition: 0.4s;
+}
+.business a:hover {
+    scale: 110%;
 }
 .online {
     background: no-repeat center /cover; 
@@ -391,7 +399,7 @@ body {
     background: no-repeat center /cover; 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../image_source/pompom.png);
 }
-#introduction article h3:hover + .business { 
+#introduction article:hover > .business { 
     z-index: 10;
 }
 
@@ -431,6 +439,10 @@ body {
     position: absolute;
     top: 130px;
     left: 0;
+    transition: 1s height;
+}
+#newsNotice h2.on::after {
+    height: 350px;
 }
 #newsNotice .sns{
     height: 50%;
@@ -480,7 +492,6 @@ body {
 }
 #newsNotice .flexClass {
     display: flex;
-    flex: 1;
     flex-direction: column;
     overflow: hidden;
 }
@@ -502,7 +513,7 @@ body {
     flex: 1;
 }
 #newsNotice .flexClass  .listWrap ul { 
-    margin: 40px 0 0 100px;
+    margin: 50px 0 0 100px;
 }
 #newsNotice .flexClass .listWrap ul li { 
     margin-bottom: 50px;
@@ -521,7 +532,7 @@ body {
     padding-bottom: 4px;
     border-bottom: 1px solid #000;
     position: relative;
-    top: 10%;
+    top: 50%;
     right: 10%;
     transform: translateY(-40%);
     text-align: start;
@@ -540,11 +551,13 @@ body {
     border-width: 1px 2px;
     border-color: #e3e3e3;
     border-style: solid;
+    flex: 1;
 }
 #newsNotice .news { 
     border-width: 1px 2px;
     border-color: #e3e3e3;
     border-style: solid;
+    flex: 1;
 }
 
 /* contectUs */
