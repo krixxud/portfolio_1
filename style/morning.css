@@ -896,8 +896,8 @@ body {
     
     #slogan h2 {
         font-family: 'HancomMalangMalang-Bold';
-        font-size: 3em;
-        letter-spacing: 0px;
+        font-size: 3.5em;
+        letter-spacing: -4px;
         opacity: 0;
         animation: sloganAni 1s 1s forwards;
     }
