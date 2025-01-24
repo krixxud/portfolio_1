@@ -39,12 +39,9 @@ body {
     width: 149px;
     height: 35px;
     top: 40px;
-    left: 100px;
+    left: 6vw;
     position: absolute;
     transition: 0.4s;
-}
-#header .logo:hover {
-    scale: 110%;
 }
 #header .logo a {
     display: block;
@@ -60,6 +57,7 @@ body {
 }
 
 /* gnb */
+
 #gnb { 
     position: relative;
     padding: 10px;
@@ -83,6 +81,107 @@ body {
     font-size: 18px;
     color: #ffffff;
 }
+#gnb.mobile { left: 0; }
+/* .mobileClose { display: none;} */
+
+/* 모바일 */
+@media screen and ( max-width: 500px) {
+    
+    #header { 
+        overflow: hidden;
+        width: 100%;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        transition: 0.5s;
+        position: absolute;
+        height: 100px;
+    }
+    #header.on { 
+        height: 400px;
+        background: #ffffff;
+        border-radius: 0 0 40px 40px;
+    }
+    #header.on::before { 
+        content: ""; 
+        position: absolute; 
+        top: 0;
+        left: 0; 
+        width: 100%; 
+        height: 100px;
+        border-bottom: 1px solid #e8e8e8;
+      }
+    #header .logo { 
+        width: 149px;
+        height: 35px;
+        top: 40px;
+        left: 0;
+        position: relative;
+    }
+    #gnb {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        background: #fff;
+        z-index: 999;
+        transition: 0.4s left;
+        height: 100vh;
+    }
+    #mobileClose {
+        display: block;
+        font-size: 20px;
+        background: url(../image_source/icon/close.png) no-repeat center / cover;
+        width: 30px;
+        height: 30px;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        z-index: 99;
+    }
+    /* 검색 */
+#rightWrap {
+    display: flex;
+    position: absolute;
+    top: 45px;
+    right: 4vw;
+    z-index: 99;
+    width: 100%;
+}
+#rightWrap .searchIcon { 
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: url(../image_source/icon/search.png) no-repeat center / cover ;
+    margin-right: 30px;
+    filter: invert(100%);
+    transition: 0.4s;
+    position: absolute;
+    right: -5%;
+}
+#rightWrap .siteMapView {
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 30px;
+    filter: invert(100%);
+    transition: 0.4s;
+    position: absolute;
+    left: 10%;
+}
+#rightWrap .siteMapView:hover {
+    scale: 110%;
+}
+#header.on #rightWrap {
+    filter: invert(100%);
+}
+}
 
 /* snb */
 .snb { 
@@ -101,8 +200,8 @@ body {
 #rightWrap {
     display: flex;
     position: absolute;
-    top: 40px;
-    right: 100px;
+    top: 45px;
+    right: 4vw;
     z-index: 99;
 }
 #rightWrap .searchIcon { 
@@ -328,7 +427,7 @@ body {
     position: relative;
     width: 100%;
     line-height: 150px;
-    z-index: 11;
+    z-index: 15;
     text-align: center;
     color: white;
     font-size: 25px;
@@ -355,9 +454,6 @@ body {
     background: #fff;
     color: white;
     display: flex;
-    transition: opacity 0.8s ease-in-out; /* 부드러운 전환 */
-    opacity: 0;
-    z-index: 1;
 }
 .business > div { 
     display: flex;
@@ -382,7 +478,6 @@ body {
 }
 .business .pTag { 
     font-weight: 400;
-    margin-bottom: 70px;
     line-height: 30px;
     text-shadow: 0 0 3px #000c;
     width: 70%;
@@ -398,7 +493,9 @@ body {
     transition: 0.4s;
 }
 .business a:hover {
-    scale: 110%;
+    background: #fff;
+    color: #000;
+    border: 2px solid rgba(0, 0, 0, 0.6);
 }
 .online {
     background: no-repeat center /cover; 
@@ -412,11 +509,6 @@ body {
     background: no-repeat center /cover; 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../image_source/pompom.png);
 }
-#introduction article:hover > .business { 
-    z-index: 10;
-    opacity: 1;
-}
-
 
 /* News&Notice */
 #newsNotice { 
@@ -447,7 +539,7 @@ body {
 #newsNotice h2::after {
     content: "";
     width: 3px;
-    height: 350px;
+    height: 0px;
     background: #000;
     border-radius: 30px;
     position: absolute;
@@ -472,6 +564,9 @@ body {
     display: flex;
     gap: 20px;
 }
+#newsNotice .sns ul li {
+    transition: 0.4s scale;
+}
 #newsNotice .sns ul li a {
     display: block;
     text-indent: 100%;
@@ -492,6 +587,9 @@ body {
 #newsNotice .sns ul li:nth-child(4) a { 
     background: url(../image_source/icon/naverCafe.png) no-repeat center /cover ;
 }
+#newsNotice .sns ul li:hover {
+    scale: 1.1;
+}
 #newsNotice .rightWrap { 
     width: 50%;
     height: 750px;
@@ -508,6 +606,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    transition: 0.4s flex;
 }
 #newsNotice .notice { 
     border-width: 2px 2px 1px 2px;
@@ -515,13 +614,25 @@ body {
     border-style: solid;
     flex: 3;
 }
+#newsNotice .pressRelease { 
+    border-width: 1px 2px;
+    border-color: #e3e3e3;
+    border-style: solid;
+    flex: 1;
+}
+#newsNotice .news { 
+    border-width: 1px 2px;
+    border-color: #e3e3e3;
+    border-style: solid;
+    flex: 1;
+}
 #newsNotice .flexClass h3 { 
     font-size: 2em;
     line-height: 148.6px;
     flex: 1;
     /* background: #ff6868; */
-    padding-left: 50px;
     border-bottom: 2px solid #e3e3e3;;
+    padding-left: 70px;
 }
 #newsNotice .flexClass .listWrap {
     flex: 1;
@@ -546,7 +657,7 @@ body {
     padding-bottom: 4px;
     border-bottom: 1px solid #000;
     position: relative;
-    top: 50%;
+    top: 10%;
     right: 10%;
     transform: translateY(-40%);
     text-align: start;
@@ -561,18 +672,7 @@ body {
     top: 7px;; right:6px;
     transform: rotate(-45deg);
 }
-#newsNotice .pressRelease { 
-    border-width: 1px 2px;
-    border-color: #e3e3e3;
-    border-style: solid;
-    flex: 1;
-}
-#newsNotice .news { 
-    border-width: 1px 2px;
-    border-color: #e3e3e3;
-    border-style: solid;
-    flex: 1;
-}
+
 
 /* contectUs */
 #contectUs {
@@ -582,6 +682,10 @@ body {
     background: url(../image_source/pen.png) no-repeat center bottom -100px/ 50px ,url(../image_source/blackBg.png) no-repeat center /cover;
     justify-content: center;
     align-items: center;
+    transition: 0.4s;
+}
+#contectUs:hover {
+    background-position: center bottom -50px, center;
 }
 #contectUs h2{ 
     font-family: 'Pretendard';

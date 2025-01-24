@@ -1,11 +1,19 @@
 
 $('#gnb').on('mouseenter', function() {
+    if (window.innerWidth < 501) e.preventDefault();
     $('#header').addClass('on')
-
-
 })
 $('#gnb').on('mouseleave', function() {
     $('#header').removeClass('on')
+})
+
+// 모바일
+$(".siteMapView").on('click', function() {
+    $("#gnb").addClass('mobile')
+})
+
+$(".mobileClose").on('click', function() {
+    $("#gnb").removeClass('mobile')
 })
 
 // aboutUs
@@ -150,34 +158,33 @@ $('.searchIcon').on('click', function (e) {
 
 
 
+
+let zNum = 10;
 $("#introduction article h3 span").on('mouseenter', function() {
-    $("#introduction .business").css({ zIndex: 1 })
-    $(this).parent().next().css({ zIndex: 10 })
+    if ( $(this).parent().next().css("z-index") == '11') return;
+    else {
+        if (zNum == 10) zNum = zNum + 2;
+        else if (zNum == 11) zNum++;   
+
+        
+        $(this).parent().next()
+                    .stop()
+                    .css({ zIndex: zNum, opacity: 0 })
+                    .animate({ opacity: 1 }, 400, function() {
+                        zNum--;
+                        $(this).css({ zIndex: zNum });
+                        $("#introduction article .business").not($(this)).css({ zIndex: 10 })
+                    })
+    }
     $('#introduction article h3').removeClass('on')
     $(this).parent().addClass('on')
 })
 
 
-// // newsNotice
-// $('#newsNotice .rightWrap .listWrap, #newsNotice .rightWrap .moreWrap').hide();
-        
-//         // 초기 로드 시 .notice의 flex 값을 1로 설정
-//         $('#newsNotice .notice').css('flex', '1');
-        
-//         // h3 클릭 이벤트
-//         $('#newsNotice .rightWrap h3').on('click', function() {
-//             const parent = $(this).closest('.flexClass'); // 클릭된 h3의 부모 .flexClass
-//             const listWrap = parent.find('.listWrap');
-//             const moreWrap = parent.find('.moreWrap');
 
-//             // 모든 섹션의 flex 값을 1로 설정
-//             $('#newsNotice .flexClass').css('flex', '1');
+$("#newsNotice article h3").on('click', function() {
+    $("#newsNotice article").not($(this).parent()).css({  flex: `1 1 1px` })
+    $(this).parent().css({ flex: `3 1 1px`})
+})
 
-//             // 클릭한 섹션의 flex 값을 3으로 설정
-//             parent.css('flex', '3');
 
-//             // 슬라이드 토글 애니메이션
-//             $('#newsNotice .rightWrap .listWrap, #newsNotice .rightWrap .moreWrap').not(listWrap).not(moreWrap).slideUp(300);
-//             listWrap.stop(true, true).slideToggle(300);
-//             moreWrap.stop(true, true).slideToggle(300);
-//         });
