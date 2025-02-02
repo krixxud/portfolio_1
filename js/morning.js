@@ -27,8 +27,12 @@ const exposurePercentage1 = 100;
 const duration1 = 600;
 const addCommas1 = false;
 
+
 function updateCounter1($el, start, end) {
+    
+
     let startTime;
+
     function animateCounter(timestamp) {
         if (!startTime) startTime = timestamp;
         const progress = (timestamp - startTime) / duration1;
@@ -52,6 +56,7 @@ const duration2 = 1700;
 const addCommas2 = false;
 
 function updateCounter2($el, start, end) {
+
     let startTime;
     function animateCounter(timestamp) {
         if (!startTime) startTime = timestamp;
@@ -74,6 +79,7 @@ $(window).on('scroll', function () {
     // 첫 번째 카운터
    
     $counters1.each(function () {
+        if (window.innerWidth < 501) e.preventDefault();
         const $el = $(this);
         if (!$el.data('scrolled')) {
             const rect = $el[0].getBoundingClientRect();
