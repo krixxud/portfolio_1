@@ -6,7 +6,7 @@ $('#gnb').on('mouseenter', function() {
 $('#gnb').on('mouseleave', function() {
     $('#header').removeClass('on')
 })
-
+ 
 // 모바일
 $(".siteMapView").on('click', function() {
     $("#gnb").addClass('mobile')
@@ -192,5 +192,7 @@ $("#newsNotice article h3").on('click', function() {
     $("#newsNotice article").not($(this).parent()).css({  flex: `1 1 1px` })
     $(this).parent().css({ flex: `3 1 1px`})
 })
+
+
 
 

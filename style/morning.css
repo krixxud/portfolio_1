@@ -820,15 +820,23 @@ body {
         position: relative;
     }
 
-    #gnb {
+    #gnb.mobile {
         position: fixed;
         top: 0;
-        left: -100%;
+        left: 0%;
         width: 80%;
         background: #fff;
         z-index: 999;
         transition: 0.4s left;
         height: 100vh;
+    }
+
+    #gnbList > li > a {
+        color: #000;
+    }
+
+    .snb {
+        color: #000
     }
 
     #mobileClose {
@@ -893,7 +901,7 @@ body {
         text-align: center;
         width: 100%;
     }
-    
+
     #slogan h2 {
         font-family: 'HancomMalangMalang-Bold';
         font-size: 4em;
@@ -901,7 +909,7 @@ body {
         opacity: 0;
         animation: sloganAni 1s 1s forwards;
     }
-    
+
     #slogan p {
         font-family: 'GowunDodum-Regular';
         margin-top: 50px;
@@ -912,103 +920,103 @@ body {
     }
 
     /* 회사소개 */
-#aboutUs {
-    margin: 0 auto;
-    height: 980px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+    #aboutUs {
+        margin: 0 auto;
+        height: 980px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
-#aboutUs h2 {
-    font-family: 'HancomMalangMalang-Bold';
-    font-weight: 900;
-    font-size: 3em;
-    margin-bottom: 150px;
-}
+    #aboutUs h2 {
+        font-family: 'HancomMalangMalang-Bold';
+        font-weight: 900;
+        font-size: 3em;
+        margin-bottom: 150px;
+    }
 
-#aboutUs #count {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 150px;
-    position: relative;
-    left: -400px;
-}
+    #aboutUs #count {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 150px;
+        position: relative;
+        left: -400px;
+    }
 
-#aboutUs #count dt {
-    font-size: 30px;
-    font-family: 'HancomMalangMalang-Bold';
-    font-weight: 900;
-}
+    #aboutUs #count dt {
+        font-size: 30px;
+        font-family: 'HancomMalangMalang-Bold';
+        font-weight: 900;
+    }
 
-#aboutUs #count dd {
-    width: 280px;
-    text-align: left;
-}
+    #aboutUs #count dd {
+        width: 280px;
+        text-align: left;
+    }
 
-#aboutUs #count .num {
-    font-size: 8em;
-    font-family: 'Pretendard';
-    font-weight: 700;
-}
+    #aboutUs #count .num {
+        font-size: 8em;
+        font-family: 'Pretendard';
+        font-weight: 700;
+    }
 
-#aboutUs #count .num1 {
-    position: relative;
-    letter-spacing: -10px;
-    padding-left: 20px;
-    /* display: none; */
-}
+    #aboutUs #count .num1 {
+        position: relative;
+        letter-spacing: -10px;
+        padding-left: 20px;
+        /* display: none; */
+    }
 
-#aboutUs #count .num1::after {
-    content: "";
-    width: 0px;
-    height: 5px;
-    background: #000;
-    position: absolute;
-    border-radius: 20px;
-    top: 60px;
-    left: 130%;
-    transition: width 2s ease-in-out;
-}
+    #aboutUs #count .num1::after {
+        content: "";
+        width: 0px;
+        height: 5px;
+        background: #000;
+        position: absolute;
+        border-radius: 20px;
+        top: 60px;
+        left: 130%;
+        transition: width 2s ease-in-out;
+    }
 
-#aboutUs #count .num1.active::after {
-    width: 100%;
-}
+    #aboutUs #count .num1.active::after {
+        width: 100%;
+    }
 
-#aboutUs #count .num2 {
-    position: absolute;
-    top: 0px;
-    left: 790px;
-    letter-spacing: -10px;
-    opacity: 1;
-}
+    #aboutUs #count .num2 {
+        position: absolute;
+        top: 0px;
+        left: 790px;
+        letter-spacing: -10px;
+        opacity: 1;
+    }
 
-#aboutUs p {
-    line-height: 20px;
-    margin-bottom: 100px;
-}
+    #aboutUs p {
+        line-height: 20px;
+        margin-bottom: 100px;
+    }
 
-#aboutUs a {
-    margin-left: 1000px;
-    display: block;
-    width: 130px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid #000;
-    position: relative;
-    text-align: start;
-}
+    #aboutUs a {
+        margin-left: 1000px;
+        display: block;
+        width: 130px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #000;
+        position: relative;
+        text-align: start;
+    }
 
-#aboutUs a::after {
-    content: "";
-    height: 15px;
-    width: 1px;
-    background: #000;
-    position: absolute;
-    top: 7px;
-    ;
-    right: 6px;
-    transform: rotate(-45deg);
-}
+    #aboutUs a::after {
+        content: "";
+        height: 15px;
+        width: 1px;
+        background: #000;
+        position: absolute;
+        top: 7px;
+        ;
+        right: 6px;
+        transform: rotate(-45deg);
+    }
 }
