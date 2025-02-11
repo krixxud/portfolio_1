@@ -1,19 +1,22 @@
 
-$('#gnb').on('mouseenter', function() {
-    if (window.innerWidth < 501) e.preventDefault();
-    $('#header').addClass('on')
-})
-$('#gnb').on('mouseleave', function() {
-    $('#header').removeClass('on')
-})
- 
-// 모바일
-$(".siteMapView").on('click', function() {
-    $("#gnb").addClass('mobile')
+$(window).on('resize', function() {
+if (window.innerWidth < 1200) {
+    $('#gnb').removeClass('desk')
+             .addClass('mobile')
+}else {
+    $('#gnb').removeClass('mobile')
+             .addClass('desk')
+}
 })
 
-$(".mobileClose").on('click', function() {
-    $("#gnb").removeClass('mobile')
+
+
+
+$('#gnb.desk').on('mouseenter', function() {
+    $('#header').addClass('on')
+})
+$('#gnb.desk').on('mouseleave', function() {
+    $('#header').removeClass('on')
 })
 
 // aboutUs
