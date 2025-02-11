@@ -1,23 +1,31 @@
+function resizing() {
+    if (window.innerWidth < 1200) {
+        $('#gnb').removeClass('desk').addClass('mobile')
+    }else {
+        $('#gnb').removeClass('mobile').addClass('desk')
+    }
+    $('.desk').on('mouseenter', function() {
+        $('#header').addClass('on')
+    })
+    $('.desk').on('mouseleave', function() {
+        $('#header').removeClass('on')
+    })
+    
+    $('.mobileBtn').on('click', function() {
 
-$(window).on('resize', function() {
-if (window.innerWidth < 1200) {
-    $('#gnb').removeClass('desk')
-             .addClass('mobile')
-}else {
-    $('#gnb').removeClass('mobile')
-             .addClass('desk')
+        $('#gnb.mobile').addClass('on')
+    })
+    $('.mobileClose').on('click', function() {
+        $('#gnb.mobile').removeClass('on')
+    })
 }
+
+resizing();
+$(window).on('resize', function() {
+    resizing()
 })
 
 
-
-
-$('#gnb.desk').on('mouseenter', function() {
-    $('#header').addClass('on')
-})
-$('#gnb.desk').on('mouseleave', function() {
-    $('#header').removeClass('on')
-})
 
 // aboutUs
 
