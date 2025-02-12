@@ -907,6 +907,7 @@ body {
         display: flex;
         justify-content: space-evenly;
         position: relative;
+        margin-bottom: 100px;
     }
 
     #aboutUs h2 {
@@ -921,20 +922,7 @@ body {
     }
 
     #aboutUs #count dt {
-        font-size: 30px;
-        font-weight: 900;
         text-align: left;
-    }
-
-    #aboutUs #count dd {
-        width: 280px;
-        text-align: left;
-    }
-
-    #aboutUs #count .num {
-        font-size: 8em;
-        font-family: 'Pretendard';
-        font-weight: 700;
     }
 
     #aboutUs #count .num1 {
@@ -962,14 +950,13 @@ body {
 
     #aboutUs p {
         position: relative;
-        top: 130px;
+        margin-top: 40px;
         left: 0;
         font-size: 12px;
         padding: 15px;
     }
 
     #aboutUs a {
-        margin-bottom: 400px;
         display: block;
         width: 130px;
         line-height: 30px;
