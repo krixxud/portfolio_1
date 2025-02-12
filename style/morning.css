@@ -60,7 +60,9 @@ body {
     filter: invert(100%);
 }
 
-.mobileBtn { display: none; }
+.mobileBtn {
+    display: none;
+}
 
 /* gnb */
 
@@ -325,17 +327,7 @@ body {
     transform: rotate(-45deg);
 }
 
-/* 사업소개 */
-#introduction {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    scale: 0.7;
-    transition: 1s ease-out scale;
-    overflow: hidden;
-    /* 스크롤 방지 */
-}
+
 
 #introduction .introTitle {
     position: absolute;
@@ -765,34 +757,35 @@ body {
     font-size: 12px;
     margin: 2px 0 0 75px;
 }
+
 @media screen and (max-width: 1199px) {
 
     #header .logo {
         left: 50%;
         translate: -50%;
     }
-    
+
     #gnb.mobile #gnbList {
         display: block;
         padding-top: 100px;
     }
-    
-    #gnb.mobile #gnbList > li {
+
+    #gnb.mobile #gnbList>li {
         padding: 0;
     }
-    
-    #gnb.mobile #gnbList > li > a {
+
+    #gnb.mobile #gnbList>li>a {
         padding: 15px 0 15px 10px;
         line-height: 1.5;
         border-bottom: 1px solid #dfdfdf;
         color: black;
     }
-    
-    #gnb.mobile #gnbList > li > a.active {
+
+    #gnb.mobile #gnbList>li>a.active {
         background-color: #ffffff;
         font-weight: bold;
     }
-    
+
     #gnb.mobile .snb {
         display: none;
         height: auto;
@@ -801,17 +794,16 @@ body {
         border-bottom: 1px solid #dfdfdf;
         color: #000;
     }
-    
+
     #gnb.mobile .snb li {
         line-height: 2.5;
         padding: 0 0 5px 30px
-
-
     }
 
-    #gnb.mobile .snb li > a {
+    #gnb.mobile .snb li>a {
         color: #000;
-    } 
+    }
+
     #gnb.mobile {
         position: fixed;
         top: 0;
@@ -822,9 +814,15 @@ body {
         transition: 0.5s left;
         height: 100vh;
     }
-    #gnb.mobile.on { left: 0; }
+
+    #gnb.mobile.on {
+        left: 0;
+    }
+
     .mobileBtn {
-        position: absolute; top: 45px; left: 25px;
+        position: absolute;
+        top: 45px;
+        left: 25px;
         width: 30px;
         height: 30px;
         text-indent: 100%;
@@ -835,12 +833,15 @@ body {
         filter: invert(100%);
         transition: 0.4s;
     }
-    
+
     .mobileBtn:hover {
         scale: 110%;
     }
+
     .mobileClose {
-        position: absolute; top: 50px; left: 38vw;
+        position: absolute;
+        top: 50px;
+        left: 38vw;
         font-size: 20px;
         background: url(../image_source/icon/close.png) no-repeat center / cover;
         width: 30px;
@@ -851,8 +852,8 @@ body {
         z-index: 10000;
     }
 
-     /* 검색 */
-     #rightWrap {
+    /* 검색 */
+    #rightWrap {
         display: flex;
         position: absolute;
         top: 45px;
@@ -875,6 +876,7 @@ body {
         position: absolute;
         right: -5%;
     }
+
     /* 슬로건 */
     #slogan {
         width: 100%;
@@ -889,88 +891,99 @@ body {
         font-size: 17px;
     }
 
-        /* 회사소개 */
-        #aboutUs {
-            width: 100%;
-            display: flex;
-            
-        }
-    
-        #aboutUs h2 {
-            font-size: 2em;
-            margin-bottom: 100px;
-        }
-    
-        #aboutUs #count {
-            flex-direction: column;
-            left: 0;
-        }
-    
-        #aboutUs #count dt {
-            font-size: 30px;
-            font-weight: 900;
-            text-align: left;
-        }
-    
-        #aboutUs #count dd {
-            width: 280px;
-            text-align: left;
-        }
-    
-        #aboutUs #count .num {
-            font-size: 8em;
-            font-family: 'Pretendard';
-            font-weight: 700;
-        }
-    
-        #aboutUs #count .num1 {
-            position: relative;
-            letter-spacing: -10px;
-            padding-left: 20px;
-        }
-    
-        #aboutUs #count .num1::after {
-            transform-origin: 0 0;
-            rotate: 90deg;
-            top: 150px;
-            left: 50%;
-        }
-        #aboutUs #count .num1.active::after {
-            width: 50%;
-        }
-        #aboutUs #count .num2 {
-            top: 340px;
-            left: 0px;
-        }
-    
-        #aboutUs p {
-            position: absolute;
-            font-size: 12px;
-            line-height: 20px;
-            margin-bottom: 100px;
-            top: 250%;
-        }
-    
-        #aboutUs a {
-            margin-left: 1000px;
-            display: block;
-            width: 130px;
-            padding-bottom: 4px;
-            border-bottom: 1px solid #000;
-            position: relative;
-            text-align: start;
-        }
-    
-        #aboutUs a::after {
-            content: "";
-            height: 15px;
-            width: 1px;
-            background: #000;
-            position: absolute;
-            top: 7px;
-            ;
-            right: 6px;
-            transform: rotate(-45deg);
-        }
-
+    /* 회사소개 */
+    #aboutUs {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
     }
+
+    #aboutUs h2 {
+        font-size: 2em;
+        margin: 100px 0 100px 0;
+    }
+
+    #aboutUs #count {
+        flex-direction: column;
+        left: 0;
+    }
+
+    #aboutUs #count dt {
+        font-size: 30px;
+        font-weight: 900;
+        text-align: left;
+    }
+
+    #aboutUs #count dd {
+        width: 280px;
+        text-align: left;
+    }
+
+    #aboutUs #count .num {
+        font-size: 8em;
+        font-family: 'Pretendard';
+        font-weight: 700;
+    }
+
+    #aboutUs #count .num1 {
+        letter-spacing: -10px;
+        padding-left: 20px;
+    }
+
+    #aboutUs #count .num1::after {
+        transform-origin: 0 0;
+        rotate: 90deg;
+        top: 150px;
+        left: 50%;
+    }
+
+    #aboutUs #count .num1.active::after {
+        width: 100%;
+    }
+
+    #aboutUs #count .num2 {
+        position: relative;
+        top: 320px;
+        left: 0px;
+        margin-bottom: 100px;
+    }
+
+    #aboutUs p {
+        position: relative;
+        top: 130px;
+        left: 0;
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    #aboutUs a {
+        margin-bottom: 400px;
+        display: block;
+        width: 130px;
+        line-height: 30px;
+        border-radius: 20px;
+        padding-bottom: 4px;
+        background: #000;
+        color: white;
+        text-align: center;
+        position: relative;
+        top: 80px;
+        left: -500px;
+    }
+
+    /* 사업소개 */
+    #introduction {
+        margin-top: 200px;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        scale: 0.7;
+        transition: 1s ease-out scale;
+        overflow: hidden;
+        /* 스크롤 방지 */
+    }
+
+}

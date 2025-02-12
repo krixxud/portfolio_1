@@ -130,7 +130,7 @@ $(window).on('scroll', function () {
     // 첫 번째 카운터
    
     $counters1.each(function () {
-        if (window.innerWidth < 501) e.preventDefault();
+        if (window.innerWidth < 501);
         const $el = $(this);
         if (!$el.data('scrolled')) {
             const rect = $el[0].getBoundingClientRect();
