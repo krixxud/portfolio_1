@@ -972,9 +972,6 @@ body {
 
     /* 사업소개 */
     #introduction {
-        position: relative;
-        width: 100%;
-        height: 100vh;
         display: block;
         overflow-x: scroll;
         overflow-y: hidden;
@@ -983,18 +980,28 @@ body {
         white-space: nowrap;
         scroll-behavior: smooth;
         /* 부드러운 스크롤 효과 */
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    #introduction::-webkit-scrollbar {
+        display: none;
     }
 
     #introduction .introTitle {
         position: fixed;
-        /* 타이틀은 고정 */
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
         z-index: 9;
         pointer-events: none;
-        /* 스와이프 동작을 방해하지 않도록 */
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+
+    #introduction .introTitle.fade-out {
+        opacity: 0;
     }
 
     #introduction article {
@@ -1017,19 +1024,35 @@ body {
     #introduction article h3 {
         position: absolute;
         bottom: 0;
-        width: 100%;
     }
 
     .business {
         position: relative;
         width: 100%;
         height: 100%;
+        overflow: hidden;
     }
 
-    .business>div {
-        width: 100%;
+    .business div {
+        width: 100vw;
         height: 100vh;
-        padding: 20px;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+
+    .business .pTag {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 20px;
+        font-size: 16px;
+        line-height: 1.6;
+        word-break: keep-all;
+        white-space: normal;
+        text-align: center;
     }
 
     /* 향상된 스와이프 힌트 애니메이션 */
@@ -1037,10 +1060,11 @@ body {
         content: "SWIPE";
         position: fixed;
         right: 60px;
-        top: 50%;
+        top: 20.3%;
         transform: translateY(-50%);
         color: #fff;
         font-size: 14px;
+        font-weight: 900;
         letter-spacing: 2px;
         opacity: 0.8;
         z-index: 10;
@@ -1051,7 +1075,7 @@ body {
         content: "";
         position: fixed;
         right: 30px;
-        top: 50%;
+        top: 20%;
         width: 20px;
         height: 20px;
         border-right: 3px solid #fff;
@@ -1114,14 +1138,7 @@ body {
         scroll-snap-align: start;
         position: relative;
         vertical-align: top;
-        opacity: 0.5;
-        transform: scale(0.95);
         transition: 0.4s all ease-out;
-    }
-
-    #introduction article.active {
-        opacity: 1;
-        transform: scale(1);
     }
 
     /* 터치 감도 최적화 */

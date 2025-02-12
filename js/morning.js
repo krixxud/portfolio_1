@@ -1,15 +1,15 @@
 function resizing() {
     if (window.innerWidth < 1200) {
         $('.desk').off();
-        $('#gnb').removeClass('desk').addClass('mobile') 
-        $('.mobileBtn').css({ display: 'block' })   
+        $('#gnb').removeClass('desk').addClass('mobile')
+        $('.mobileBtn').css({ display: 'block' })
     }
     else {
         $('#gnb').removeClass('mobile').addClass('desk')
-        $('.desk').on('mouseenter', function() {
+        $('.desk').on('mouseenter', function () {
             $('#header').addClass('on')
         })
-        $('.desk').on('mouseleave', function() {
+        $('.desk').on('mouseleave', function () {
             $('#header').removeClass('on')
         })
         $('.mobileBtn').css({ display: 'none' })
@@ -17,35 +17,35 @@ function resizing() {
 }
 
 resizing();
-$(window).on('resize', function() {
+$(window).on('resize', function () {
     resizing()
 })
 $('.mobileClose').hide();
-$('.mobileBtn').on('click', function() {
+$('.mobileBtn').on('click', function () {
     $('.mobileClose').show();
     $('.mobile').addClass('on');
 })
-$('.mobileClose').on('click', function() {
+$('.mobileClose').on('click', function () {
     $('.mobileClose').hide();
     $('.mobile').removeClass('on');
 })
 
 // 모바일에서 메인 메뉴 클릭 시 서브메뉴 토글
-$('#gnbList > li > a').on('click', function(e){
+$('#gnbList > li > a').on('click', function (e) {
     // viewport 너비가 1199px 이하일 때만 작동
-    if($(window).width() <= 1199) {
+    if ($(window).width() <= 1199) {
         e.preventDefault(); // 링크 기본 동작 방지
-        
+
         const $this = $(this);
         const $subMenu = $this.siblings('.snb');
-        
+
         // 현재 클릭한 메뉴의 서브메뉴가 닫혀있는 경우
-        if(!$subMenu.is(':visible')) {
+        if (!$subMenu.is(':visible')) {
             // 다른 열린 서브메뉴들을 먼저 닫기
             $('#gnbList .snb').slideUp(300);
             // 현재 서브메뉴 열기
             $subMenu.slideDown(300);
-            
+
             // 활성화된 메뉴 스타일 적용
             $('#gnbList > li > a').removeClass('active');
             $this.addClass('active');
@@ -58,8 +58,8 @@ $('#gnbList > li > a').on('click', function(e){
 });
 
 // 리사이즈 시 모바일 메뉴 초기화
-$(window).on('resize', function(){
-    if($(window).width() > 1199) {
+$(window).on('resize', function () {
+    if ($(window).width() > 1199) {
         $('#gnb').removeClass('mobile on');
         $('.mobileClose').hide();
         $('.snb').removeAttr('style');
@@ -80,7 +80,7 @@ const addCommas1 = false;
 
 
 function updateCounter1($el, start, end) {
-    
+
 
     let startTime;
 
@@ -128,7 +128,7 @@ function updateCounter2($el, start, end) {
 // 스크롤 이벤트 병합
 $(window).on('scroll', function () {
     // 첫 번째 카운터
-   
+
     $counters1.each(function () {
         if (window.innerWidth < 501);
         const $el = $(this);
@@ -137,7 +137,7 @@ $(window).on('scroll', function () {
             const winHeight = window.innerHeight;
             const contentHeight = rect.bottom - rect.top;
 
-            if (rect.top <= winHeight - (contentHeight * exposurePercentage1 / 50) ) {
+            if (rect.top <= winHeight - (contentHeight * exposurePercentage1 / 50)) {
                 // if (rect.top <= winHeight - (contentHeight * exposurePercentage1 / 1000) && rect.bottom >= (contentHeight * exposurePercentage1 / 400)) {
                 const start = parseInt($el.data("start"));
                 const end = parseInt($el.data("end"));
@@ -167,83 +167,90 @@ $(window).on('scroll', function () {
     });
 
     // introduction 도달시
-const $introduction = $("#introduction");
+    const $introduction = $("#introduction");
 
-// introduction 도달시
-$introduction.each(function () {
-    const $el = $(this);
-    const rect = $el[0].getBoundingClientRect();
-    const contentHeight = rect.bottom - rect.top;
-    if (rect.top <= winHeight - (contentHeight * exposurePercentage / 400)) {
-        $el.css({ scale: 1 })
-    }
-    else {
-        $el.css({ scale: 0.7 })
-        $("#introduction .business").css({ zIndex: 1 })
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const introduction = document.querySelector('#introduction');
-    const articles = introduction.querySelectorAll('article');
-    
-    // 페이지 인디케이터 생성
-    const indicator = document.createElement('div');
-    indicator.className = 'page-indicator';
-    articles.forEach(() => {
-        const dot = document.createElement('span');
-        indicator.appendChild(dot);
+    // introduction 도달시
+    $introduction.each(function () {
+        const $el = $(this);
+        const rect = $el[0].getBoundingClientRect();
+        const contentHeight = rect.bottom - rect.top;
+        if (rect.top <= winHeight - (contentHeight * exposurePercentage / 400)) {
+            $el.css({ scale: 1 })
+        }
+        else {
+            $el.css({ scale: 0.7 })
+            $("#introduction .business").css({ zIndex: 1 })
+        }
     });
-    introduction.appendChild(indicator);
-    
-    // 현재 활성 슬라이드 추적
-    const updateActiveSlide = () => {
-        const index = Math.round(introduction.scrollLeft / window.innerWidth);
-        
-        // 인디케이터 업데이트
-        indicator.querySelectorAll('span').forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const introduction = document.querySelector('#introduction');
+        const articles = introduction.querySelectorAll('article');
+
+        const introTitle = document.querySelector('#introduction .introTitle');
+        if (introTitle) {
+            setTimeout(() => {
+                introTitle.classList.add('fade-out');
+            }, 3000);
+        }
+
+        // 페이지 인디케이터 생성
+        const indicator = document.createElement('div');
+        indicator.className = 'page-indicator';
+        articles.forEach(() => {
+            const dot = document.createElement('span');
+            indicator.appendChild(dot);
         });
-        
-        // 슬라이드 활성화 효과
-        articles.forEach((article, i) => {
-            article.classList.toggle('active', i === index);
+        introduction.appendChild(indicator);
+
+        // 현재 활성 슬라이드 추적
+        const updateActiveSlide = () => {
+            const index = Math.round(introduction.scrollLeft / window.innerWidth);
+
+            // 인디케이터 업데이트
+            indicator.querySelectorAll('span').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+
+            // 슬라이드 활성화 효과
+            articles.forEach((article, i) => {
+                article.classList.toggle('active', i === index);
+            });
+        };
+
+        // 스크롤 이벤트
+        let timeout;
+        introduction.addEventListener('scroll', () => {
+            clearTimeout(timeout);
+            timeout = setTimeout(updateActiveSlide, 100);
         });
-    };
-    
-    // 스크롤 이벤트
-    let timeout;
-    introduction.addEventListener('scroll', () => {
-        clearTimeout(timeout);
-        timeout = setTimeout(updateActiveSlide, 100);
+
+        // 초기 활성화
+        updateActiveSlide();
+
+        // 5초 후 스와이프 힌트 제거
+        setTimeout(() => {
+            introduction.style.setProperty('--hint-opacity', '0');
+        }, 5000);
     });
-    
-    // 초기 활성화
-    updateActiveSlide();
-    
-    // 5초 후 스와이프 힌트 제거
-    setTimeout(() => {
-        introduction.style.setProperty('--hint-opacity', '0');
-    }, 5000);
-});
 
-// newsNotice 도달시
-const $newsNotice = $("#newsNotice");
+    // newsNotice 도달시
+    const $newsNotice = $("#newsNotice");
 
-   // 소식 도달시
-   $newsNotice.each(function () {
-    const $el = $(this);
-    const $heading = $el.find('h2')
-    const rect = $el[0].getBoundingClientRect();
-    const contentHeight = rect.bottom - rect.top;
-    if (rect.top <= winHeight - (contentHeight * exposurePercentage / 200)) {
-        $heading.addClass('on')
-    }
-    else {
-        $heading.removeClass('on')
+    // 소식 도달시
+    $newsNotice.each(function () {
+        const $el = $(this);
+        const $heading = $el.find('h2')
+        const rect = $el[0].getBoundingClientRect();
+        const contentHeight = rect.bottom - rect.top;
+        if (rect.top <= winHeight - (contentHeight * exposurePercentage / 200)) {
+            $heading.addClass('on')
+        }
+        else {
+            $heading.removeClass('on')
 
-    }
-})
+        }
+    })
 }).scroll();
 
 $('.searchIcon').on('click', function (e) {
@@ -261,21 +268,21 @@ $('.searchIcon').on('click', function (e) {
 
 
 let zNum = 10;
-$("#introduction article h3 span").on('mouseenter', function() {
-    if ( $(this).parent().next().css("z-index") == '11') return;
+$("#introduction article h3 span").on('mouseenter', function () {
+    if ($(this).parent().next().css("z-index") == '11') return;
     else {
         if (zNum == 10) zNum = zNum + 2;
-        else if (zNum == 11) zNum++;   
+        else if (zNum == 11) zNum++;
 
-        
+
         $(this).parent().next()
-                    .stop()
-                    .css({ zIndex: zNum, opacity: 0 })
-                    .animate({ opacity: 1 }, 400, function() {
-                        zNum--;
-                        $(this).css({ zIndex: zNum });
-                        $("#introduction article .business").not($(this)).css({ zIndex: 10 })
-                    })
+            .stop()
+            .css({ zIndex: zNum, opacity: 0 })
+            .animate({ opacity: 1 }, 400, function () {
+                zNum--;
+                $(this).css({ zIndex: zNum });
+                $("#introduction article .business").not($(this)).css({ zIndex: 10 })
+            })
     }
     $('#introduction article h3').removeClass('on')
     $(this).parent().addClass('on')
@@ -283,9 +290,9 @@ $("#introduction article h3 span").on('mouseenter', function() {
 
 
 
-$("#newsNotice article h3").on('click', function() {
-    $("#newsNotice article").not($(this).parent()).css({  flex: `1 1 1px` })
-    $(this).parent().css({ flex: `3 1 1px`})
+$("#newsNotice article h3").on('click', function () {
+    $("#newsNotice article").not($(this).parent()).css({ flex: `1 1 1px` })
+    $(this).parent().css({ flex: `3 1 1px` })
 })
 
 
