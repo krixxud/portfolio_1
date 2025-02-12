@@ -980,8 +980,10 @@ body {
         white-space: nowrap;
         scroll-behavior: smooth;
         /* 부드러운 스크롤 효과 */
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
         position: relative;
     }
 
@@ -1015,7 +1017,8 @@ body {
         position: relative;
         vertical-align: top;
         /* 상단 정렬 */
-        z-index: 1;  /* 낮은 z-index 값 설정 */
+        z-index: 1;
+        /* 낮은 z-index 값 설정 */
         transform: translateX(calc(var(--scroll-progress) * -100%));
     }
 
@@ -1034,7 +1037,8 @@ body {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        z-index: 1;  /* 낮은 z-index 값 설정 */
+        z-index: 1;
+        /* 낮은 z-index 값 설정 */
     }
 
     .business div {
@@ -1090,8 +1094,15 @@ body {
     }
 
     @keyframes fadeInOut {
-        0%, 100% { opacity: 0; }
-        50% { opacity: 0.8; }
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0.8;
+        }
     }
 
     @keyframes swipeArrow {
@@ -1099,10 +1110,12 @@ body {
             right: 40px;
             opacity: 0;
         }
+
         50% {
             right: 30px;
             opacity: 1;
         }
+
         100% {
             right: 20px;
             opacity: 0;
@@ -1125,7 +1138,8 @@ body {
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.5);
         transition: 0.3s all;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);  /* 그림자 추가로 가시성 향상 */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        /* 그림자 추가로 가시성 향상 */
     }
 
     .page-indicator span.active {
@@ -1153,5 +1167,264 @@ body {
             -webkit-scroll-snap-destination: 0% 100%;
             scroll-snap-points-x: repeat(100%);
         }
+    }
+
+    /* News&Notice */
+    #newsNotice {
+        width: 100%;
+        margin: 0 auto;
+        height: 750px;
+        display: flex;
+    }
+
+    #newsNotice .leftWrap {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 750px;
+        justify-content: space-between;
+        padding: 70px;
+    }
+
+    #newsNotice h2 {
+        line-height: 50px;
+        font-family: 'Pretendard';
+        font-weight: 500;
+        font-size: 2em;
+        position: relative;
+    }
+
+    #newsNotice h2 span {
+        font-family: 'HancomMalangMalang-Bold';
+        font-weight: 900;
+    }
+
+    #newsNotice h2::after {
+        content: none;
+    }
+
+    #newsNotice h2.on::after {
+        height: 350px;
+    }
+
+    #newsNotice .sns {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        position: absolute;
+        bottom: 0;
+        z-index: 10;
+    }
+
+    #newsNotice .sns p {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    #newsNotice .sns ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    #newsNotice .sns ul li {
+        transition: 0.4s scale;
+    }
+
+    #newsNotice .sns ul li a {
+        display: block;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 30px;
+        height: 30px;
+        filter: invert(100%);
+    }
+
+    #newsNotice .sns ul li:nth-child(1) a {
+        background: url(../image_source/icon/instagram.png) no-repeat center /cover;
+    }
+
+    #newsNotice .sns ul li:nth-child(2) a {
+        background: url(../image_source/icon/facebook.png) no-repeat center /cover;
+    }
+
+    #newsNotice .sns ul li:nth-child(3) a {
+        background: url(../image_source/icon/twitter.png) no-repeat center /cover;
+    }
+
+    #newsNotice .sns ul li:nth-child(4) a {
+        background: url(../image_source/icon/naverCafe.png) no-repeat center /cover;
+    }
+
+    #newsNotice .sns ul li:hover {
+        scale: 1.1;
+    }
+
+    #newsNotice .rightWrap {
+        width: 50%;
+        height: 750px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #newsNotice .rightWrap ul li {
+        white-space: nowrap;
+        overflow: hidden;
+        width: 330px;
+        text-overflow: ellipsis;
+    }
+
+    #newsNotice .flexClass {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: 0.4s flex;
+    }
+
+    #newsNotice .notice {
+        border-width: 2px 2px 1px 2px;
+        border-color: #e3e3e3;
+        border-style: solid;
+        flex: 3;
+    }
+
+    #newsNotice .pressRelease {
+        border-width: 1px 2px;
+        border-color: #e3e3e3;
+        border-style: solid;
+        flex: 1;
+    }
+
+    #newsNotice .news {
+        border-width: 1px 2px;
+        border-color: #e3e3e3;
+        border-style: solid;
+        flex: 1;
+    }
+
+    #newsNotice .flexClass h3 {
+        font-size: 2em;
+        line-height: 148.6px;
+        flex: 1;
+        /* background: #ff6868; */
+        border-bottom: 2px solid #e3e3e3;
+        ;
+        padding-left: 70px;
+    }
+
+    #newsNotice .flexClass .listWrap {
+        flex: 1;
+    }
+
+    #newsNotice .flexClass .listWrap ul {
+        margin: 50px 0 0 100px;
+    }
+
+    #newsNotice .flexClass .listWrap ul li {
+        margin-bottom: 50px;
+    }
+
+    #newsNotice .flexClass .listWrap ul li a {
+        color: #000;
+        font-family: 'Pretendard';
+    }
+
+    #newsNotice .flexClass .moreWrap {
+        flex: 1;
+    }
+
+    #newsNotice .flexClass .moreWrap a {
+        float: right;
+        display: block;
+        width: 100px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #000;
+        position: relative;
+        top: 10%;
+        right: 10%;
+        transform: translateY(-40%);
+        text-align: start;
+        color: #000;
+    }
+
+    #newsNotice .flexClass .moreWrap a::after {
+        content: "";
+        height: 15px;
+        width: 1px;
+        background: #000;
+        position: absolute;
+        top: 7px;
+        ;
+        right: 6px;
+        transform: rotate(-45deg);
+    }
+
+    /* contectUs */
+    #contectUs {
+        height: 50vh;
+        background: url(../image_source/blackBg.png) no-repeat center /cover;
+        transition: 0;
+    }
+
+    #contectUs:hover {
+        background-position: center bottom 0px, center;
+    }
+
+    #contectUs:hover {
+        pointer-events: none;
+    }
+
+    #contectUs h2 {
+        font-size: 1.5rem;
+    }
+
+    #contectUs a {
+        font-size: 2em;
+    }
+
+    /* 푸터 */
+    #footer {
+        height: auto;
+        width: 100%;
+        background: linear-gradient(to top, #000000, transparent), url(../image_source/blackBg.png) bottom center;
+    }
+
+    #footer .footerLogo {
+        margin: 10px 0 10px 0;
+        background: url(../image_source/icon/header_logo.png) no-repeat;
+    }
+
+    #footer .info .companyInfo {
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #footer .info address {
+        display: none;
+    }
+
+    #footer .infoWrap {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #footer .info a {
+        margin: 0;
+    }
+
+    #footer .infoList li a {
+        margin: 0 10px
+    }
+
+    #footer .infoList li:not(:last-child)::after {
+        display: none;
+    }
+
+    #footer .info small {
+        margin: 30px 0;
     }
 }
