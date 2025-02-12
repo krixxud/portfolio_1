@@ -217,6 +217,7 @@ $(window).on('scroll', function () {
                 article.classList.toggle('active', i === index);
             });
         };
+        
 
         // 스크롤 이벤트
         let timeout;

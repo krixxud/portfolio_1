@@ -982,6 +982,7 @@ body {
         /* 부드러운 스크롤 효과 */
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
+        position: relative;
     }
 
     #introduction::-webkit-scrollbar {
@@ -1015,6 +1016,7 @@ body {
         vertical-align: top;
         /* 상단 정렬 */
         z-index: 1;  /* 낮은 z-index 값 설정 */
+        transform: translateX(calc(var(--scroll-progress) * -100%));
     }
 
     #introduction article::after {
@@ -1109,10 +1111,9 @@ body {
 
     /* 페이지 인디케이터 */
     .page-indicator {
-        position: fixed;
+        position: sticky;
         bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
+        left: calc(50% - 35px);
         display: flex;
         gap: 10px;
         z-index: 9999;
