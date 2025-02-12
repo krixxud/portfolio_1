@@ -327,7 +327,17 @@ body {
     transform: rotate(-45deg);
 }
 
-
+  /* 사업소개 */
+  #introduction {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    scale: 0.7;
+    transition: 1s ease-out scale;
+    overflow: hidden;
+    /* 스크롤 방지 */
+}
 
 #introduction .introTitle {
     position: absolute;
