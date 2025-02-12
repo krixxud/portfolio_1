@@ -891,8 +891,9 @@ body {
 
         /* 회사소개 */
         #aboutUs {
-            max-width: 500px;
-            text-align: end;
+            width: 100%;
+            display: flex;
+            
         }
     
         #aboutUs h2 {
@@ -938,7 +939,6 @@ body {
             width: 50%;
         }
         #aboutUs #count .num2 {
-            position: absolute;
             top: 340px;
             left: 0px;
         }
