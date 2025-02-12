@@ -60,6 +60,8 @@ body {
     filter: invert(100%);
 }
 
+.mobileBtn { display: none; }
+
 /* gnb */
 
 #gnb {
@@ -93,7 +95,9 @@ body {
     font-size: 18px;
     color: #ffffff;
 }
-.mobileClose { display: none; }
+
+
+/* .mobileClose { display: none;} */
 
 
 
@@ -119,7 +123,6 @@ body {
 
 /* 검색 */
 #rightWrap {
-    width: 100%;
     display: flex;
     position: absolute;
     top: 45px;
@@ -148,22 +151,7 @@ body {
     display: none;
 }
 
-#rightWrap .mobileBtn {
-    display: none;
-    width: 30px;
-    height: 30px;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    background: url(../image_source/icon/menu.png) no-repeat center / cover;
-    margin-right: 30px;
-    filter: invert(100%);
-    transition: 0.4s;
-}
 
-#rightWrap .siteMapView:hover {
-    scale: 110%;
-}
 
 #header.on #rightWrap {
     filter: invert(100%);
@@ -784,37 +772,75 @@ body {
         translate: -50%;
     }
     
-    #gnbList > li > a {
+    #gnb.mobile #gnbList {
+        display: block;
+        padding-top: 100px;
+    }
+    
+    #gnb.mobile #gnbList > li {
+        padding: 0;
+    }
+    
+    #gnb.mobile #gnbList > li > a {
+        padding: 15px 0 15px 10px;
+        line-height: 1.5;
+        border-bottom: 1px solid #dfdfdf;
+        color: black;
+    }
+    
+    #gnb.mobile #gnbList > li > a.active {
+        background-color: #ffffff;
+        font-weight: bold;
+    }
+    
+    #gnb.mobile .snb {
+        display: none;
+        height: auto;
+        padding: 20px 0 20px 10px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #dfdfdf;
         color: #000;
     }
+    
+    #gnb.mobile .snb li {
+        line-height: 2.5;
+        padding: 0 0 5px 30px
 
-    .snb li a {
-        color: #000
+
+    }
+
+    #gnb.mobile .snb li > a {
+        color: #000;
     } 
     #gnb.mobile {
         position: fixed;
         top: 0;
         left: -100%;
-        width: 80%;
+        width: 50%;
         background: #fff;
         z-index: 999;
-        transition: 0.4s left;
+        transition: 0.5s left;
         height: 100vh;
     }
-
-    /* 검색 */
-    #rightWrap .mobileBtn {
-        display: block;
-        position: absolute;
-        left: 0%;
-
+    #gnb.mobile.on { left: 0; }
+    .mobileBtn {
+        position: absolute; top: 45px; left: 25px;
+        width: 30px;
+        height: 30px;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        background: url(../image_source/icon/menu.png) no-repeat center / cover;
+        margin-right: 30px;
+        filter: invert(100%);
+        transition: 0.4s;
     }
-    #rightWrap .searchIcon {
-        position: absolute;
-        right: -5%;
+    
+    .mobileBtn:hover {
+        scale: 110%;
     }
     .mobileClose {
-        display: block;
+        position: absolute; top: 50px; left: 38vw;
         font-size: 20px;
         background: url(../image_source/icon/close.png) no-repeat center / cover;
         width: 30px;
@@ -822,141 +848,129 @@ body {
         text-indent: 100%;
         white-space: nowrap;
         overflow: hidden;
-        z-index: 99;
+        z-index: 10000;
     }
+
+     /* 검색 */
+     #rightWrap {
+        display: flex;
+        position: absolute;
+        top: 45px;
+        right: 4vw;
+        z-index: 99;
+        width: 100%;
+    }
+
+    #rightWrap .searchIcon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        background: url(../image_source/icon/search.png) no-repeat center / cover;
+        margin-right: 30px;
+        filter: invert(100%);
+        transition: 0.4s;
+        position: absolute;
+        right: -5%;
+    }
+    /* 슬로건 */
     #slogan {
         width: 100%;
     }
+
     #slogan h2 {
         font-size: 4em;
     }
+
     #slogan p {
+        margin-top: 50px;
         font-size: 17px;
     }
+
+        /* 회사소개 */
+        #aboutUs {
+            max-width: 500px;
+            text-align: end;
+        }
     
-}
+        #aboutUs h2 {
+            font-size: 2em;
+            margin-bottom: 100px;
+        }
+    
+        #aboutUs #count {
+            flex-direction: column;
+            left: 0;
+        }
+    
+        #aboutUs #count dt {
+            font-size: 30px;
+            font-weight: 900;
+            text-align: left;
+        }
+    
+        #aboutUs #count dd {
+            width: 280px;
+            text-align: left;
+        }
+    
+        #aboutUs #count .num {
+            font-size: 8em;
+            font-family: 'Pretendard';
+            font-weight: 700;
+        }
+    
+        #aboutUs #count .num1 {
+            position: relative;
+            letter-spacing: -10px;
+            padding-left: 20px;
+        }
+    
+        #aboutUs #count .num1::after {
+            transform-origin: 0 0;
+            rotate: 90deg;
+            top: 150px;
+            left: 50%;
+        }
+        #aboutUs #count .num1.active::after {
+            width: 50%;
+        }
+        #aboutUs #count .num2 {
+            position: absolute;
+            top: 340px;
+            left: 0px;
+        }
+    
+        #aboutUs p {
+            position: absolute;
+            font-size: 12px;
+            line-height: 20px;
+            margin-bottom: 100px;
+            top: 250%;
+        }
+    
+        #aboutUs a {
+            margin-left: 1000px;
+            display: block;
+            width: 130px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #000;
+            position: relative;
+            text-align: start;
+        }
+    
+        #aboutUs a::after {
+            content: "";
+            height: 15px;
+            width: 1px;
+            background: #000;
+            position: absolute;
+            top: 7px;
+            ;
+            right: 6px;
+            transform: rotate(-45deg);
+        }
 
-/* 모바일 */
-@media screen and (max-width: 500px) {
-
-
-
-
-
-
-
-
-    /* 검색 */
-
-
-
-
- 
-
-
-
-
-
-
-
-    /* 회사소개 */
-    #aboutUs {
-        margin: 0 auto;
-        height: 980px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
     }
-
-    #aboutUs h2 {
-        font-family: 'HancomMalangMalang-Bold';
-        font-weight: 900;
-        font-size: 3em;
-        margin-bottom: 150px;
-    }
-
-    #aboutUs #count {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 150px;
-        position: relative;
-        left: -400px;
-    }
-
-    #aboutUs #count dt {
-        font-size: 30px;
-        font-family: 'HancomMalangMalang-Bold';
-        font-weight: 900;
-    }
-
-    #aboutUs #count dd {
-        width: 280px;
-        text-align: left;
-    }
-
-    #aboutUs #count .num {
-        font-size: 8em;
-        font-family: 'Pretendard';
-        font-weight: 700;
-    }
-
-    #aboutUs #count .num1 {
-        position: relative;
-        letter-spacing: -10px;
-        padding-left: 20px;
-        /* display: none; */
-    }
-
-    #aboutUs #count .num1::after {
-        content: "";
-        width: 0px;
-        height: 5px;
-        background: #000;
-        position: absolute;
-        border-radius: 20px;
-        top: 60px;
-        left: 130%;
-        transition: width 2s ease-in-out;
-    }
-
-    #aboutUs #count .num1.active::after {
-        width: 100%;
-    }
-
-    #aboutUs #count .num2 {
-        position: absolute;
-        top: 0px;
-        left: 790px;
-        letter-spacing: -10px;
-        opacity: 1;
-    }
-
-    #aboutUs p {
-        line-height: 20px;
-        margin-bottom: 100px;
-    }
-
-    #aboutUs a {
-        margin-left: 1000px;
-        display: block;
-        width: 130px;
-        padding-bottom: 4px;
-        border-bottom: 1px solid #000;
-        position: relative;
-        text-align: start;
-    }
-
-    #aboutUs a::after {
-        content: "";
-        height: 15px;
-        width: 1px;
-        background: #000;
-        position: absolute;
-        top: 7px;
-        ;
-        right: 6px;
-        transform: rotate(-45deg);
-    }
-}

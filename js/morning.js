@@ -1,30 +1,71 @@
 function resizing() {
     if (window.innerWidth < 1200) {
-        $('#gnb').removeClass('desk').addClass('mobile')
-    }else {
-        $('#gnb').removeClass('mobile').addClass('desk')
+        $('.desk').off();
+        $('#gnb').removeClass('desk').addClass('mobile') 
+        $('.mobileBtn').css({ display: 'block' })   
     }
-    $('.desk').on('mouseenter', function() {
-        $('#header').addClass('on')
-    })
-    $('.desk').on('mouseleave', function() {
-        $('#header').removeClass('on')
-    })
-    
-    $('.mobileBtn').on('click', function() {
-        $('#gnb.mobile').addClass('on')
-    })
-    $('.mobileClose').on('click', function() {
-        $('#gnb.mobile').removeClass('on')
-    })
+    else {
+        $('#gnb').removeClass('mobile').addClass('desk')
+        $('.desk').on('mouseenter', function() {
+            $('#header').addClass('on')
+        })
+        $('.desk').on('mouseleave', function() {
+            $('#header').removeClass('on')
+        })
+        $('.mobileBtn').css({ display: 'none' })
+    }
 }
 
 resizing();
 $(window).on('resize', function() {
     resizing()
 })
+$('.mobileClose').hide();
+$('.mobileBtn').on('click', function() {
+    $('.mobileClose').show();
+    $('.mobile').addClass('on');
+})
+$('.mobileClose').on('click', function() {
+    $('.mobileClose').hide();
+    $('.mobile').removeClass('on');
+})
 
+// 모바일에서 메인 메뉴 클릭 시 서브메뉴 토글
+$('#gnbList > li > a').on('click', function(e){
+    // viewport 너비가 1199px 이하일 때만 작동
+    if($(window).width() <= 1199) {
+        e.preventDefault(); // 링크 기본 동작 방지
+        
+        const $this = $(this);
+        const $subMenu = $this.siblings('.snb');
+        
+        // 현재 클릭한 메뉴의 서브메뉴가 닫혀있는 경우
+        if(!$subMenu.is(':visible')) {
+            // 다른 열린 서브메뉴들을 먼저 닫기
+            $('#gnbList .snb').slideUp(300);
+            // 현재 서브메뉴 열기
+            $subMenu.slideDown(300);
+            
+            // 활성화된 메뉴 스타일 적용
+            $('#gnbList > li > a').removeClass('active');
+            $this.addClass('active');
+        } else {
+            // 현재 서브메뉴가 열려있으면 닫기
+            $subMenu.slideUp(300);
+            $this.removeClass('active');
+        }
+    }
+});
 
+// 리사이즈 시 모바일 메뉴 초기화
+$(window).on('resize', function(){
+    if($(window).width() > 1199) {
+        $('#gnb').removeClass('mobile on');
+        $('.mobileClose').hide();
+        $('.snb').removeAttr('style');
+        $('#gnbList > li > a').removeClass('active');
+    }
+});
 
 // aboutUs
 
