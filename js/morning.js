@@ -183,6 +183,50 @@ $introduction.each(function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const introduction = document.querySelector('#introduction');
+    const articles = introduction.querySelectorAll('article');
+    
+    // 페이지 인디케이터 생성
+    const indicator = document.createElement('div');
+    indicator.className = 'page-indicator';
+    articles.forEach(() => {
+        const dot = document.createElement('span');
+        indicator.appendChild(dot);
+    });
+    introduction.appendChild(indicator);
+    
+    // 현재 활성 슬라이드 추적
+    const updateActiveSlide = () => {
+        const index = Math.round(introduction.scrollLeft / window.innerWidth);
+        
+        // 인디케이터 업데이트
+        indicator.querySelectorAll('span').forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        
+        // 슬라이드 활성화 효과
+        articles.forEach((article, i) => {
+            article.classList.toggle('active', i === index);
+        });
+    };
+    
+    // 스크롤 이벤트
+    let timeout;
+    introduction.addEventListener('scroll', () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(updateActiveSlide, 100);
+    });
+    
+    // 초기 활성화
+    updateActiveSlide();
+    
+    // 5초 후 스와이프 힌트 제거
+    setTimeout(() => {
+        introduction.style.setProperty('--hint-opacity', '0');
+    }, 5000);
+});
+
 // newsNotice 도달시
 const $newsNotice = $("#newsNotice");
 
