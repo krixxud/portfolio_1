@@ -119,6 +119,7 @@ body {
 
 /* 검색 */
 #rightWrap {
+    width: 100%;
     display: flex;
     position: absolute;
     top: 45px;
@@ -805,14 +806,14 @@ body {
     #rightWrap .mobileBtn {
         display: block;
         position: absolute;
-        left: -380px;
+        left: 0%;
 
     }
     #rightWrap .searchIcon {
         position: absolute;
         right: -5%;
     }
-    #mobileClose {
+    .mobileClose {
         display: block;
         font-size: 20px;
         background: url(../image_source/icon/close.png) no-repeat center / cover;

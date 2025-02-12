@@ -12,7 +12,6 @@ function resizing() {
     })
     
     $('.mobileBtn').on('click', function() {
-
         $('#gnb.mobile').addClass('on')
     })
     $('.mobileClose').on('click', function() {
