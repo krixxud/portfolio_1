@@ -973,52 +973,38 @@ body {
 
     /* 사업소개 */
     #introduction {
-        padding: 40px 20px;
-        display: flex;
+        padding: 80px 20px;
         flex-direction: column;
-        gap: 30px;
+        row-gap: 100px;
         height: auto;
-        min-height: 100vh;
         scale: 1;
     }
 
     #introduction .introTitle {
-        margin: 0 auto;
         background-image: none;
         color: #000;
         line-height: 0;
+        position: relative;
     }
 
     #introduction article {
-        width: 100%;
-        min-height: 400px;
+        height: 400px;
         display: block;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 15px;
-        padding: 30px 0 0 0;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         transition: all 0.3s ease;
         position: relative;
-        overflow: hidden;
+        overflow: hidden;   
+        flex: auto;
     }
-
-    #introduction article:nth-child(1) {
-        margin-top: 40px;
-    };
 
     #introduction article::after {
         display: none;
     }
 
     #introduction article h3 {
-        position: relative;
-        width: 100%;
-        line-height: normal;
-        margin-bottom: 20px;
-        font-size: 28px;
-        color: #000000;
-        text-align: left;
-        padding-left: 20px;
+        display: none;
     }
 
     .business {
@@ -1061,24 +1047,26 @@ body {
     .business a {
         margin-top: 10px;
         width: 140px;
-        line-height: 45px;
+        line-height: 35px;
         text-align: center;
-        border-radius: 8px;
+        border-radius: 30px;
+        background: white;
+        color: #000;
     }
 
     .online {
         
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
                     url(../image_source/online.png) no-repeat center/cover;
     }
 
     .overseas {
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
                     url(../image_source/overseas.png) no-repeat center/cover;
     }
 
     .special {
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
                     url(../image_source/pompom.png) no-repeat center/cover;
     }
 
@@ -1136,7 +1124,9 @@ body {
         flex-direction: column;
         justify-content: end;
         position: absolute;
-        bottom: 0;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 10;
     }
 
@@ -1146,7 +1136,7 @@ body {
 
     #newsNotice .sns ul {
         display: flex;
-        gap: 20px;
+        gap: 50px;
     }
 
     #newsNotice .sns ul li {
