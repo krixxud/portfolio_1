@@ -958,7 +958,7 @@ body {
 
     #aboutUs #count .num2 {
         position: relative;
-        top: 10px;
+        top: 20px;
         left: 0px;
     }
 
@@ -1153,10 +1153,10 @@ body {
     #newsNotice .flexClass h3 {
         font-size: 1.8em;
         line-height: normal;
-        flex: 0;
+        flex: 1;
         border-bottom: 0;
         padding-left: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 70px;
     }
 
     /* 특별한 border 스타일 제거 */
@@ -1170,6 +1170,7 @@ body {
 
     #newsNotice .flexClass .moreWrap {
         padding-top: 60px;
+        padding-right: 20px;
     }
 
 
