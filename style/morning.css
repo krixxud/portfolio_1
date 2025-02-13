@@ -1083,15 +1083,17 @@ body {
     /* News&Notice */
     #newsNotice {
         width: 100%;
-        height: auto;
+        height: 700px;
         padding: 50px 20px;
         margin: 0;
     }
 
     #newsNotice .leftWrap {
         width: 100%;
-        height: auto;
-        padding: 0 0 50px 0;
+        height: fit-content;
+        padding: 0 0 0px 0;
+        display: block;
+
     }
 
     #newsNotice .rightWrap {
@@ -1100,6 +1102,7 @@ body {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        position: absolute;
     }
 
     #newsNotice h2 {
@@ -1129,9 +1132,12 @@ body {
         border-bottom: 1px solid #e3e3e3;
     }
 
+    #newsNotice .flexClass .listWrap {
+        display: none;
+    }
+
     #newsNotice .flexClass .listWrap ul {
-        margin: 20px;
-        padding: 0;
+        display: none;
     }
 
     #newsNotice .flexClass .listWrap ul li {
@@ -1200,6 +1206,18 @@ body {
 
     #newsNotice .sns ul li:nth-child(4) a {
         background: url(../image_source/icon/naverCafe.png) no-repeat center /cover;
+    }
+
+    #newsNotice .notice { 
+        grid-area: 1 / 2;
+    }
+
+    #newsNotice .pressRelease { 
+        grid-area: 2 / 1;
+    }
+
+    #newsNotice .news { 
+        grid-area: 2 / 2;
     }
 
     /* 특별한 border 스타일 제거 */
