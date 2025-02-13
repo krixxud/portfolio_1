@@ -156,7 +156,7 @@ $(window).on('scroll', function () {
             const winHeight = window.innerHeight;
             const contentHeight = rect.bottom - rect.top;
 
-            if (rect.top <= winHeight - (contentHeight * exposurePercentage2 / 50)) {
+            if (rect.top <= winHeight - (contentHeight * exposurePercentage2 / 150)) {
                 const start = parseInt($el.data("start"));
                 const end = parseInt($el.data("end"));
                 updateCounter2($el, start, end);
