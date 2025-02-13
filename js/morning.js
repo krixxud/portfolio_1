@@ -136,7 +136,7 @@ $(window).on('scroll', function () {
             const winHeight = window.innerHeight;
             const contentHeight = rect.bottom - rect.top;
 
-            if (rect.top <= winHeight - (contentHeight * exposurePercentage1 / 50)) {
+            if (rect.top <= winHeight - (contentHeight * exposurePercentage1 / 200)) {
                 // if (rect.top <= winHeight - (contentHeight * exposurePercentage1 / 1000) && rect.bottom >= (contentHeight * exposurePercentage1 / 400)) {
                 const start = parseInt($el.data("start"));
                 const end = parseInt($el.data("end"));
@@ -263,16 +263,14 @@ $(window).on('scroll', function () {
     })
 }).scroll();
 
+$(document).ready(function() {
+    $(window).scroll();
+});
+
 $('.searchIcon').on('click', function (e) {
     e.preventDefault();
     alert('검색 기능은 준비 중입니다.');
 });
-
-// $(window).on('load', function () {
-//     $('#slogan h2').css({ opacity: 1 });
-//     $('#slogan p').css({ opacity: 1 });
-// });
-
 
 
 
