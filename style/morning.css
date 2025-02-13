@@ -1089,7 +1089,7 @@ body {
     }
 
     #newsNotice .leftWrap {
-        width: 100%;
+        width: 50%;
         height: fit-content;
         padding: 0 0 0px 0;
         display: block;
@@ -1103,11 +1103,16 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         position: absolute;
+        padding: 0 20px;
+        left: 0;
     }
 
     #newsNotice h2 {
-        text-align: center;
         font-size: 1.8em;
+    }
+
+    #newsNotice h2::after {
+        content: none;
     }
 
     /* article 스타일 수정 */
