@@ -1099,6 +1099,9 @@ body {
         width: 100%;
         display: flex;
         flex-direction: column;
+        background: #eaeaea55;
+        height: auto;
+        padding-bottom: 100px;
     }
 
     #newsNotice .leftWrap {
@@ -1125,7 +1128,7 @@ body {
         width: 100%;
         height: auto;
         padding: 0 20px;
-        gap: 20px;
+        gap: 35px;
     }
 
     #newsNotice .listWrap {
@@ -1142,43 +1145,33 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        height: 170px;
+        align-items: center;
     }
 
     #newsNotice .flexClass h3 {
-        font-size: 2em;
-        line-height: 148.6px;
+        font-size: 1.8em;
+        line-height: normal;
         flex: 0;
         border-bottom: 0;
-        padding-left: 70px;
+        padding-left: 30px;
+        margin-bottom: 30px;
     }
-
-    #newsNotice .pressRelease {}
 
     /* 특별한 border 스타일 제거 */
     #newsNotice .notice,
     #newsNotice .pressRelease,
     #newsNotice .news {
-        border: 1px solid #e3e3e3;
+        border: 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         flex: unset;
     }
 
-    #newsNotice .flexClass .moreWrap a {
-        float: none;
-        width: 130px;
-        line-height: 30px;
-        border-radius: 50px;
-        padding: 4px;
-        border-bottom: 0;
-        text-align: center;
-        background: #000;
-        color: #ffffff;
-        top: 50%;
-        right: 20px;
+    #newsNotice .flexClass .moreWrap {
+        padding-top: 60px;
     }
 
-    #newsNotice .flexClass .moreWrap a::after {
-        content: none;
-    }
+
 
     #newsNotice .sns {
         position: absolute;
