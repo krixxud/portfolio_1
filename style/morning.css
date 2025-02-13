@@ -6,9 +6,18 @@
 /* 초기화 */
 @import url(./reset.css);
 
+html {
+    overflow-x: hidden;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
 body {
     font-family: 'GowunDodum-Regular';
     position: relative;
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* header */
@@ -499,6 +508,10 @@ body {
     font-weight: 900;
 }
 
+#newsNotice h2 .space {
+    display: none;
+}
+
 #newsNotice h2::after {
     content: "";
     width: 3px;
@@ -770,6 +783,24 @@ body {
 
 @media screen and (max-width: 1199px) {
 
+    html, body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
     #header .logo {
         left: 50%;
         translate: -50%;
@@ -953,14 +984,14 @@ body {
         position: relative;
         margin-top: 40px;
         left: 0;
-        font-size: 12px;
-        padding: 15px;
+        font-size: 15px;
+        padding: 15px 33px;
     }
 
     #aboutUs a {
         display: block;
-        width: 130px;
-        line-height: 30px;
+        width: 150px;
+        line-height: 35px;
         border-radius: 20px;
         padding-bottom: 4px;
         background: #000;
@@ -969,6 +1000,7 @@ body {
         position: relative;
         left: 0;
         margin-left: 0;
+        font-size: 20px;
     }
 
     /* 사업소개 */
@@ -1056,17 +1088,17 @@ body {
 
     .online {
         
-        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                     url(../image_source/online.png) no-repeat center/cover;
     }
 
     .overseas {
-        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                     url(../image_source/overseas.png) no-repeat center/cover;
     }
 
     .special {
-        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                     url(../image_source/pompom.png) no-repeat center/cover;
     }
 
@@ -1083,7 +1115,7 @@ body {
     /* News&Notice */
     #newsNotice {
         width: 100%;
-        height: 700px;
+        height: 500px;
         padding: 50px 20px;
         margin: 0;
     }
@@ -1093,7 +1125,7 @@ body {
         height: fit-content;
         padding: 0 0 0px 0;
         display: block;
-
+        border: 1px ;
     }
 
     #newsNotice .rightWrap {
@@ -1108,8 +1140,12 @@ body {
     }
 
     #newsNotice h2 {
-        font-size: 1.8em;
+        font-size: 4vw;
     }
+
+    #newsNotice h2 .space {
+    display: inline;
+}
 
     #newsNotice h2::after {
         content: none;
@@ -1117,7 +1153,7 @@ body {
 
     /* article 스타일 수정 */
     #newsNotice .flexClass {
-        min-height: 300px;
+        height: auto;
         border: 1px solid #e3e3e3;
         border-radius: 10px;
         background: #fff;
@@ -1134,7 +1170,7 @@ body {
         line-height: normal;
         padding: 20px;
         text-align: center;
-        border-bottom: 1px solid #e3e3e3;
+        border-bottom: none;
     }
 
     #newsNotice .flexClass .listWrap {
@@ -1195,22 +1231,6 @@ body {
         width: 30px;
         height: 30px;
         filter: invert(100%);
-    }
-
-    #newsNotice .sns ul li:nth-child(1) a {
-        background: url(../image_source/icon/instagram.png) no-repeat center /cover;
-    }
-
-    #newsNotice .sns ul li:nth-child(2) a {
-        background: url(../image_source/icon/facebook.png) no-repeat center /cover;
-    }
-
-    #newsNotice .sns ul li:nth-child(3) a {
-        background: url(../image_source/icon/twitter.png) no-repeat center /cover;
-    }
-
-    #newsNotice .sns ul li:nth-child(4) a {
-        background: url(../image_source/icon/naverCafe.png) no-repeat center /cover;
     }
 
     #newsNotice .notice { 
