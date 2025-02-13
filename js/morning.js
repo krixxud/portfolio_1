@@ -1,27 +1,3 @@
-if (window.innerWidth <= 1199) {
-    const wrapper = document.getElementById('wrapper');
-    let lastScrollTop = 0;
-    
-    wrapper.addEventListener('scroll', function() {
-        const st = wrapper.scrollTop;
-        
-        // 스크롤이 최상단에 도달했을 때만 주소창 표시 허용
-        if (st <= 0) {
-            document.body.style.position = 'static';
-            document.body.style.height = 'auto';
-            wrapper.style.position = 'static';
-            wrapper.style.height = 'auto';
-        } else {
-            document.body.style.position = 'fixed';
-            document.body.style.height = '100%';
-            wrapper.style.position = 'absolute';
-            wrapper.style.height = '100%';
-        }
-        
-        lastScrollTop = st;
-    });
-}
-
 function resizing() {
     if (window.innerWidth < 1200) {
         $('.desk').off();
@@ -267,6 +243,8 @@ $(window).on('scroll', function () {
 
     if(window.innerWidth < 1199) {
         e.preventDefault();
+    }else {
+        return;
     }
 
     // 소식 도달시

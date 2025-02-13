@@ -6,18 +6,9 @@
 /* 초기화 */
 @import url(./reset.css);
 
-html {
-    overflow-x: hidden;
-    height: 100%;
-    -webkit-overflow-scrolling: touch;
-}
-
 body {
     font-family: 'GowunDodum-Regular';
     position: relative;
-    height: 100%;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
 }
 
 /* header */
@@ -624,7 +615,6 @@ body {
     font-size: 2em;
     line-height: 148.6px;
     flex: 1;
-    /* background: #ff6868; */
     border-bottom: 2px solid #e3e3e3;
     ;
     padding-left: 70px;
@@ -783,24 +773,6 @@ body {
 
 @media screen and (max-width: 1199px) {
 
-    html, body {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    #wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow-y: auto;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-    }
-
     #header .logo {
         left: 50%;
         translate: -50%;
@@ -881,8 +853,8 @@ body {
 
     .mobileClose {
         position: absolute;
-        top: 50px;
-        left: 38vw;
+        top: 45px;
+        left: 25px;
         font-size: 20px;
         background: url(../image_source/icon/close.png) no-repeat center / cover;
         width: 30px;
@@ -916,6 +888,16 @@ body {
         transition: 0.4s;
         position: absolute;
         right: -5%;
+    }
+
+    #videoWrap::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
     }
 
     /* 슬로건 */
@@ -1027,7 +1009,7 @@ body {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         transition: all 0.3s ease;
         position: relative;
-        overflow: hidden;   
+        overflow: hidden;
         flex: auto;
     }
 
@@ -1087,19 +1069,19 @@ body {
     }
 
     .online {
-        
+
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                    url(../image_source/online.png) no-repeat center/cover;
+            url(../image_source/online.png) no-repeat center/cover;
     }
 
     .overseas {
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                    url(../image_source/overseas.png) no-repeat center/cover;
+            url(../image_source/overseas.png) no-repeat center/cover;
     }
 
     .special {
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                    url(../image_source/pompom.png) no-repeat center/cover;
+            url(../image_source/pompom.png) no-repeat center/cover;
     }
 
     /* 터치 감도 최적화 */
@@ -1115,94 +1097,90 @@ body {
     /* News&Notice */
     #newsNotice {
         width: 100%;
-        height: 500px;
-        padding: 50px 20px;
-        margin: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     #newsNotice .leftWrap {
-        width: 50%;
-        height: fit-content;
-        padding: 0 0 0px 0;
-        display: block;
-        border: 1px ;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        padding: 70px 20px;
+    }
+
+    #newsNotice h2 {
+        line-height: 40px;
+        font-size: 1.7em;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    #newsNotice h2::after {
+        content: none;
+
     }
 
     #newsNotice .rightWrap {
         width: 100%;
         height: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        position: absolute;
         padding: 0 20px;
-        left: 0;
+        gap: 20px;
     }
 
-    #newsNotice h2 {
-        font-size: 4vw;
+    #newsNotice .listWrap {
+        display: none;
     }
 
-    #newsNotice h2 .space {
-    display: inline;
-}
-
-    #newsNotice h2::after {
-        content: none;
-    }
-
-    /* article 스타일 수정 */
+    /* 카드 공통 스타일 */
     #newsNotice .flexClass {
         height: auto;
-        border: 1px solid #e3e3e3;
-        border-radius: 10px;
         background: #fff;
+        border: 1px solid #000000;
+        border-radius: 10px;
         transition: 0.3s;
-    }
-
-    #newsNotice .flexClass:hover {
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transform: translateY(-5px);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     #newsNotice .flexClass h3 {
-        font-size: 1.5em;
-        line-height: normal;
-        padding: 20px;
-        text-align: center;
-        border-bottom: none;
+        font-size: 2em;
+        line-height: 148.6px;
+        flex: 0;
+        border-bottom: 0;
+        padding-left: 70px;
     }
 
-    #newsNotice .flexClass .listWrap {
-        display: none;
-    }
+    #newsNotice .pressRelease {}
 
-    #newsNotice .flexClass .listWrap ul {
-        display: none;
-    }
-
-    #newsNotice .flexClass .listWrap ul li {
-        margin-bottom: 15px;
-        width: 100%;
-    }
-
-    #newsNotice .flexClass .moreWrap {
-        padding: 20px;
+    /* 특별한 border 스타일 제거 */
+    #newsNotice .notice,
+    #newsNotice .pressRelease,
+    #newsNotice .news {
+        border: 1px solid #e3e3e3;
+        flex: unset;
     }
 
     #newsNotice .flexClass .moreWrap a {
         float: none;
-        margin: 0 auto;
-        top: 0;
-        right: 0;
-        transform: none;
+        width: 130px;
+        line-height: 30px;
+        border-radius: 50px;
+        padding: 4px;
+        border-bottom: 0;
+        text-align: center;
+        background: #000;
+        color: #ffffff;
+        top: 50%;
+        right: 20px;
+    }
+
+    #newsNotice .flexClass .moreWrap a::after {
+        content: none;
     }
 
     #newsNotice .sns {
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
         position: absolute;
         bottom: 80px;
         left: 50%;
@@ -1215,7 +1193,6 @@ body {
     }
 
     #newsNotice .sns ul {
-        display: flex;
         gap: 50px;
     }
 
@@ -1224,41 +1201,8 @@ body {
     }
 
     #newsNotice .sns ul li a {
-        display: block;
-        text-indent: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        width: 30px;
-        height: 30px;
         filter: invert(100%);
     }
-
-    #newsNotice .notice { 
-        grid-area: 1 / 2;
-    }
-
-    #newsNotice .pressRelease { 
-        grid-area: 2 / 1;
-    }
-
-    #newsNotice .news { 
-        grid-area: 2 / 2;
-    }
-
-    /* 특별한 border 스타일 제거 */
-    #newsNotice .notice,
-    #newsNotice .pressRelease,
-    #newsNotice .news {
-        border: 1px solid #e3e3e3;
-    }
-
-    /* Flex 비율 리셋 */
-    #newsNotice .notice,
-    #newsNotice .pressRelease,
-    #newsNotice .news {
-        flex: unset;
-    }
-
 
     /* contectUs */
     #contectUs {
