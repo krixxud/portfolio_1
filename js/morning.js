@@ -241,6 +241,10 @@ $(window).on('scroll', function () {
     // newsNotice 도달시
     const $newsNotice = $("#newsNotice");
 
+    if(window.innerWidth < 1199) {
+        e.preventDefault();
+    }
+
     // 소식 도달시
     $newsNotice.each(function () {
         const $el = $(this);

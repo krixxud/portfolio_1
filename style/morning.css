@@ -1083,39 +1083,72 @@ body {
     /* News&Notice */
     #newsNotice {
         width: 100%;
-        margin: 0 auto;
-        height: 750px;
-        display: flex;
+        height: auto;
+        padding: 50px 20px;
+        margin: 0;
     }
 
     #newsNotice .leftWrap {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        height: 750px;
-        justify-content: space-between;
-        padding: 70px;
+        width: 100%;
+        height: auto;
+        padding: 0 0 50px 0;
+    }
+
+    #newsNotice .rightWrap {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
     #newsNotice h2 {
-        line-height: 50px;
-        font-family: 'Pretendard';
-        font-weight: 500;
-        font-size: 2em;
-        position: relative;
+        text-align: center;
+        font-size: 1.8em;
     }
 
-    #newsNotice h2 span {
-        font-family: 'HancomMalangMalang-Bold';
-        font-weight: 900;
+    /* article 스타일 수정 */
+    #newsNotice .flexClass {
+        min-height: 300px;
+        border: 1px solid #e3e3e3;
+        border-radius: 10px;
+        background: #fff;
+        transition: 0.3s;
     }
 
-    #newsNotice h2::after {
-        content: none;
+    #newsNotice .flexClass:hover {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transform: translateY(-5px);
     }
 
-    #newsNotice h2.on::after {
-        height: 350px;
+    #newsNotice .flexClass h3 {
+        font-size: 1.5em;
+        line-height: normal;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #e3e3e3;
+    }
+
+    #newsNotice .flexClass .listWrap ul {
+        margin: 20px;
+        padding: 0;
+    }
+
+    #newsNotice .flexClass .listWrap ul li {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    #newsNotice .flexClass .moreWrap {
+        padding: 20px;
+    }
+
+    #newsNotice .flexClass .moreWrap a {
+        float: none;
+        margin: 0 auto;
+        top: 0;
+        right: 0;
+        transform: none;
     }
 
     #newsNotice .sns {
@@ -1169,108 +1202,20 @@ body {
         background: url(../image_source/icon/naverCafe.png) no-repeat center /cover;
     }
 
-    #newsNotice .sns ul li:hover {
-        scale: 1.1;
-    }
-
-    #newsNotice .rightWrap {
-        width: 50%;
-        height: 750px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #newsNotice .rightWrap ul li {
-        white-space: nowrap;
-        overflow: hidden;
-        width: 330px;
-        text-overflow: ellipsis;
-    }
-
-    #newsNotice .flexClass {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        transition: 0.4s flex;
-    }
-
-    #newsNotice .notice {
-        border-width: 2px 2px 1px 2px;
-        border-color: #e3e3e3;
-        border-style: solid;
-        flex: 3;
-    }
-
-    #newsNotice .pressRelease {
-        border-width: 1px 2px;
-        border-color: #e3e3e3;
-        border-style: solid;
-        flex: 1;
-    }
-
+    /* 특별한 border 스타일 제거 */
+    #newsNotice .notice,
+    #newsNotice .pressRelease,
     #newsNotice .news {
-        border-width: 1px 2px;
-        border-color: #e3e3e3;
-        border-style: solid;
-        flex: 1;
+        border: 1px solid #e3e3e3;
     }
 
-    #newsNotice .flexClass h3 {
-        font-size: 2em;
-        line-height: 148.6px;
-        flex: 1;
-        /* background: #ff6868; */
-        border-bottom: 2px solid #e3e3e3;
-        ;
-        padding-left: 70px;
+    /* Flex 비율 리셋 */
+    #newsNotice .notice,
+    #newsNotice .pressRelease,
+    #newsNotice .news {
+        flex: unset;
     }
 
-    #newsNotice .flexClass .listWrap {
-        flex: 1;
-    }
-
-    #newsNotice .flexClass .listWrap ul {
-        margin: 50px 0 0 100px;
-    }
-
-    #newsNotice .flexClass .listWrap ul li {
-        margin-bottom: 50px;
-    }
-
-    #newsNotice .flexClass .listWrap ul li a {
-        color: #000;
-        font-family: 'Pretendard';
-    }
-
-    #newsNotice .flexClass .moreWrap {
-        flex: 1;
-    }
-
-    #newsNotice .flexClass .moreWrap a {
-        float: right;
-        display: block;
-        width: 100px;
-        padding-bottom: 4px;
-        border-bottom: 1px solid #000;
-        position: relative;
-        top: 10%;
-        right: 10%;
-        transform: translateY(-40%);
-        text-align: start;
-        color: #000;
-    }
-
-    #newsNotice .flexClass .moreWrap a::after {
-        content: "";
-        height: 15px;
-        width: 1px;
-        background: #000;
-        position: absolute;
-        top: 7px;
-        ;
-        right: 6px;
-        transform: rotate(-45deg);
-    }
 
     /* contectUs */
     #contectUs {
