@@ -8,6 +8,7 @@
 
 body {
     font-family: 'GowunDodum-Regular';
+    position: relative;
 }
 
 /* header */
@@ -192,7 +193,7 @@ body {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 40%;
+    top: 40vh;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -892,7 +893,7 @@ body {
     }
 
     #slogan h2 {
-        font-size: 4em;
+        font-size: 3.5em;
     }
 
     #slogan p {
@@ -972,191 +973,113 @@ body {
 
     /* 사업소개 */
     #introduction {
-        display: block;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
-        scroll-behavior: smooth;
-        /* 부드러운 스크롤 효과 */
-        -ms-overflow-style: none;
-        /* IE and Edge */
-        scrollbar-width: none;
-        /* Firefox */
-        position: relative;
-    }
-
-    #introduction::-webkit-scrollbar {
-        display: none;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        height: auto;
+        min-height: 100vh;
+        scale: 1;
     }
 
     #introduction .introTitle {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: 8;
-        pointer-events: none;
-        opacity: 1;
-        transition: opacity 0.5s ease;
-    }
-
-    #introduction .introTitle.fade-out {
-        opacity: 0;
+        margin: 0 auto;
+        background-image: none;
+        color: #000;
+        line-height: 0;
     }
 
     #introduction article {
-        display: inline-block;
-        /* 가로로 배치 */
         width: 100%;
-        height: 100vh;
-        scroll-snap-align: start;
-        /* 스와이프 시 시작 지점에 맞춤 */
+        min-height: 400px;
+        display: block;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 30px 0 0 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
         position: relative;
-        vertical-align: top;
-        /* 상단 정렬 */
-        z-index: 1;
-        /* 낮은 z-index 값 설정 */
-        transform: translateX(calc(var(--scroll-progress) * -100%));
+        overflow: hidden;
     }
+
+    #introduction article:nth-child(1) {
+        margin-top: 40px;
+    };
 
     #introduction article::after {
         display: none;
-        /* 구분선 제거 */
     }
 
     #introduction article h3 {
-        position: absolute;
-        bottom: 0;
+        position: relative;
+        width: 100%;
+        line-height: normal;
+        margin-bottom: 20px;
+        font-size: 28px;
+        color: #000000;
+        text-align: left;
+        padding-left: 20px;
     }
 
     .business {
         position: relative;
         width: 100%;
         height: 100%;
-        overflow: hidden;
-        z-index: 1;
-        /* 낮은 z-index 값 설정 */
+        background: none;
     }
 
     .business div {
-        width: 100vw;
-        height: 100vh;
-        padding: 40px 20px;
+        width: 100%;
+        height: 100%;
+        padding: 20px 0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        gap: 25px;
         align-items: center;
         flex: 1;
     }
 
+    .business .Title {
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-align: left;
+        color: #ffffff;
+    }
+
     .business .pTag {
-        width: 90%;
-        margin: 0 auto;
-        padding: 0 20px;
+        width: 70%;
+        margin: 0;
+        padding: 0;
         font-size: 16px;
-        line-height: 1.6;
+        line-height: 1.8;
         word-break: keep-all;
         white-space: normal;
         text-align: center;
+        color: #ffffff;
     }
 
-    /* 향상된 스와이프 힌트 애니메이션 */
-    #introduction::before {
-        content: "SWIPE";
-        position: fixed;
-        right: 60px;
-        top: 20.3%;
-        transform: translateY(-50%);
-        color: #fff;
-        font-size: 14px;
-        font-weight: 900;
-        letter-spacing: 2px;
-        opacity: 0.8;
-        z-index: 10;
-        animation: fadeInOut 2s infinite;
+    .business a {
+        margin-top: 10px;
+        width: 140px;
+        line-height: 45px;
+        text-align: center;
+        border-radius: 8px;
     }
 
-    #introduction::after {
-        content: "";
-        position: fixed;
-        right: 30px;
-        top: 20%;
-        width: 20px;
-        height: 20px;
-        border-right: 3px solid #fff;
-        border-bottom: 3px solid #fff;
-        transform: rotate(-45deg) translateY(-50%);
-        animation: swipeArrow 2s infinite;
-        z-index: 10;
+    .online {
+        
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                    url(../image_source/online.png) no-repeat center/cover;
     }
 
-    @keyframes fadeInOut {
-
-        0%,
-        100% {
-            opacity: 0;
-        }
-
-        50% {
-            opacity: 0.8;
-        }
+    .overseas {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                    url(../image_source/overseas.png) no-repeat center/cover;
     }
 
-    @keyframes swipeArrow {
-        0% {
-            right: 40px;
-            opacity: 0;
-        }
-
-        50% {
-            right: 30px;
-            opacity: 1;
-        }
-
-        100% {
-            right: 20px;
-            opacity: 0;
-        }
-    }
-
-    /* 페이지 인디케이터 */
-    .page-indicator {
-        position: sticky;
-        bottom: 30px;
-        left: calc(50% - 35px);
-        display: flex;
-        gap: 10px;
-        z-index: 9999;
-    }
-
-    .page-indicator span {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.5);
-        transition: 0.3s all;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        /* 그림자 추가로 가시성 향상 */
-    }
-
-    .page-indicator span.active {
-        width: 24px;
-        border-radius: 4px;
-        background: #fff;
-    }
-
-    /* 전환 효과 */
-    #introduction article {
-        display: inline-block;
-        width: 100%;
-        height: 100vh;
-        scroll-snap-align: start;
-        position: relative;
-        vertical-align: top;
-        transition: 0.4s all ease-out;
+    .special {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                    url(../image_source/pompom.png) no-repeat center/cover;
     }
 
     /* 터치 감도 최적화 */
@@ -1218,8 +1141,7 @@ body {
     }
 
     #newsNotice .sns p {
-        font-size: 20px;
-        margin-bottom: 30px;
+        display: none;
     }
 
     #newsNotice .sns ul {

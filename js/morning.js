@@ -130,7 +130,6 @@ $(window).on('scroll', function () {
     // 첫 번째 카운터
 
     $counters1.each(function () {
-        if (window.innerWidth < 501);
         const $el = $(this);
         if (!$el.data('scrolled')) {
             const rect = $el[0].getBoundingClientRect();
@@ -168,6 +167,10 @@ $(window).on('scroll', function () {
 
     // introduction 도달시
     const $introduction = $("#introduction");
+
+    if(window.innerWidth < 1199) {
+        e.preventDefault();
+    }
 
     // introduction 도달시
     $introduction.each(function () {
